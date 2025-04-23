@@ -1,17 +1,17 @@
-export class StackArray<T> {
+export class QueueArray<T> {
 
   private items: T[] = [];
 
-  push(element: T): void {
+  enqueue(element: T): void {
     this.items.push(element);
   }
 
-  pop(): T | undefined {
-    return this.items.pop();
+  dequeue(): T | undefined {
+    return this.items.shift();
   }
 
   peek(): T | undefined {
-    return this.items.at(this.size() - 1);
+    return this.items.at(0);
   }
 
   isEmpty(): boolean {

@@ -1,16 +1,28 @@
-export class StackArray<T> {
+export class DequeArray<T> {
 
   private items: T[] = [];
 
-  push(element: T): void {
+  addFront(element: T): void {
+    this.items.unshift(element);
+  }
+
+  addBack(element: T): void {
     this.items.push(element);
   }
 
-  pop(): T | undefined {
+  removeFront(): T | undefined {
+    return this.items.shift();
+  }
+
+  removeBack(): T | undefined {
     return this.items.pop();
   }
 
-  peek(): T | undefined {
+  peekFront(): T | undefined {
+    return this.items.at(0);
+  }
+
+  peekBack(): T | undefined {
     return this.items.at(this.size() - 1);
   }
 
