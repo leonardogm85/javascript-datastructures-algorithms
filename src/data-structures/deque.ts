@@ -2,7 +2,7 @@ export class Deque<T> {
 
   private count: number = 0;
   private lowestCount: number = 0;
-  private items: { [key: number]: T } = {};
+  private items: any = {};
 
   addFront(element: T): void {
     if (this.isEmpty()) {

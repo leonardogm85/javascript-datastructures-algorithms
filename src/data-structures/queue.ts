@@ -2,7 +2,7 @@ export class Queue<T> {
 
   private count: number = 0;
   private lowestCount: number = 0;
-  private items: { [key: number]: T } = {};
+  private items: any = {};
 
   enqueue(element: T): void {
     this.items[this.count++] = element;
