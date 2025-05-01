@@ -1,13 +1,17 @@
+import { IToStringFunction, defaultToString } from "../util";
+
 export class Set<T> {
 
-  private items: any = {};
+  private items: { [key: string]: T } = {};
+
+  constructor(private toStrFn: IToStringFunction<T> = defaultToString) { }
 
   add(element: T): boolean {
     if (this.has(element)) {
       return false;
     }
 
-    this.items[element] = element;
+    this.items[this.toStrFn(element)] = element;
 
     return true;
   }
@@ -17,13 +21,13 @@ export class Set<T> {
       return false;
     }
 
-    delete this.items[element];
+    delete this.items[this.toStrFn(element)];
 
     return true;
   }
 
   has(element: T): boolean {
-    return Object.prototype.hasOwnProperty.call(this.items, <any>element);
+    return Object.prototype.hasOwnProperty.call(this.items, this.toStrFn(element));
   }
 
   values(): T[] {

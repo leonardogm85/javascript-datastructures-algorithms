@@ -10,7 +10,7 @@ export class Node<T> {
 export class DoublyNode<T> extends Node<T> {
 
   constructor(
-    element: T,
+    override element: T,
     override next?: DoublyNode<T>,
     public prev?: DoublyNode<T>
   ) {
