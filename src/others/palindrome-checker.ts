@@ -1,7 +1,8 @@
 import { Deque } from '../data-structures/deque';
+import { isNullOrUndefinedOrWhiteSpace } from '../util';
 
 export function palindromeChecker(aString: string): boolean {
-  if (!aString) {
+  if (isNullOrUndefinedOrWhiteSpace(aString)) {
     return false;
   }
 

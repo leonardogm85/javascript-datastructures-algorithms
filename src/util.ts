@@ -37,3 +37,11 @@ export function defaultToString<T>(o: T): string {
 
   return o.toString();
 }
+
+export function isNullOrUndefined<T>(o: T) {
+  return o === undefined || o === null;
+}
+
+export function isNullOrUndefinedOrWhiteSpace(o: string) {
+  return o === undefined || o === null || o === '';
+}

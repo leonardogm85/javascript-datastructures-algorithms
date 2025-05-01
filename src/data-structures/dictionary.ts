@@ -1,5 +1,5 @@
 import { ValuePair } from "../models/dictionary-model";
-import { IToStringFunction, defaultToString } from "../util";
+import { IToStringFunction, defaultToString, isNullOrUndefined } from "../util";
 
 export class Dictionary<K, V> {
 
@@ -8,7 +8,7 @@ export class Dictionary<K, V> {
   constructor(private toStrFn: IToStringFunction<K> = defaultToString) { }
 
   set(key: K, value: V): boolean {
-    if (!key || !value) {
+    if (isNullOrUndefined(key) || isNullOrUndefined(value)) {
       return false;
     }
 

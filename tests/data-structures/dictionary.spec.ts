@@ -379,14 +379,14 @@ describe('Dictionary', () => {
 
     expect(dictionary.toString()).toEqual('');
 
-    let myObj: MyObject = new MyObject(1, 2);
+    let myObject: MyObject = new MyObject(1, 2);
 
-    dictionary.set(myObj, myObj);
+    dictionary.set(myObject, myObject);
     expect(dictionary.toString()).toEqual('[#1|2: 1|2]');
 
-    myObj = new MyObject(3, 4);
+    myObject = new MyObject(3, 4);
 
-    dictionary.set(myObj, myObj);
+    dictionary.set(myObject, myObject);
     expect(dictionary.toString()).toEqual('[#1|2: 1|2],[#3|4: 3|4]');
   });
 });
