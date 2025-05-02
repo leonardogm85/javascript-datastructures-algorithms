@@ -64,7 +64,7 @@ export default class HashTable<K, V> {
 
     const valuePair: ValuePair<K, V> | undefined = this.table[position];
 
-    if (isNullOrUndefined(valuePair)) {
+    if (!valuePair) {
       return false;
     }
 
