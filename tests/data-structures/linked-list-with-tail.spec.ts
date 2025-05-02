@@ -11,7 +11,7 @@ describe('LinkedListWithTail', () => {
   }
 
   function verifyList(list: LinkedList<number>, min: number, max: number): void {
-    let current: Node<number> | undefined = list['getNodeAt'](0) as Node<number> | undefined;
+    let current: Node<number> | undefined = list.getNodeAt(0);
 
     for (let i: number = min; i <= max; i++) {
       expect(current).toBeDefined();
@@ -238,7 +238,7 @@ describe('LinkedListWithTail', () => {
     current = list.removeAt(1);
     expect(current).toEqual(2);
 
-    let node: Node<number> | undefined = list['getNodeAt'](0) as Node<number> | undefined;
+    let node: Node<number> | undefined = list.getNodeAt(0);
 
     expect(node).toBeDefined();
     expect(node!.element).toEqual(1);

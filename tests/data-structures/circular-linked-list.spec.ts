@@ -11,7 +11,7 @@ describe('CircularLinkedList', () => {
   }
 
   function verifyList(list: CircularLinkedList<number>, min: number, max: number): void {
-    const head: Node<number> | undefined = list['getNodeAt'](0) as Node<number> | undefined;
+    const head: Node<number> | undefined = list.getNodeAt(0);
 
     let current: Node<number> | undefined = head;
 
@@ -234,8 +234,8 @@ describe('CircularLinkedList', () => {
 
   it('removes element from middle of list', () => {
     const list: CircularLinkedList<number> = new CircularLinkedList<number>(defaultEquals);
-    let min: number = 1;
-    let max: number = 3;
+    const min: number = 1;
+    const max: number = 3;
 
     pushesElements(list, min, max);
 
@@ -244,7 +244,7 @@ describe('CircularLinkedList', () => {
     current = list.removeAt(1);
     expect(current).toEqual(2);
 
-    let head: Node<number> | undefined = list['getNodeAt'](0) as Node<number> | undefined;
+    const head: Node<number> | undefined = list.getNodeAt(0);
 
     let node: Node<number> | undefined = head;
 

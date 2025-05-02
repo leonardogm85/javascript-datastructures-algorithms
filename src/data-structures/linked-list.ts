@@ -8,7 +8,7 @@ export class LinkedList<T> {
 
   constructor(protected equalsFn: IEqualsFunction<T> = defaultEquals) { }
 
-  protected getNodeAt(index: number): Node<T> | undefined {
+  getNodeAt(index: number): Node<T> | undefined {
     if (index < 0 || index > this.size()) {
       return undefined;
     }

@@ -11,7 +11,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
     super(equalsFn);
   }
 
-  protected override getNodeAt(index: number): DoublyNode<T> | undefined {
+  override getNodeAt(index: number): DoublyNode<T> | undefined {
     if (index < 0 || index > this.size()) {
       return undefined;
     }

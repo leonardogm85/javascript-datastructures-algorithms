@@ -13,14 +13,14 @@ describe('DoublyLinkedList', () => {
   function verifyList(list: DoublyLinkedList<number>, min: number, max: number): void {
     let current: DoublyNode<number> | undefined;
 
-    current = list['getNodeAt'](0) as DoublyNode<number> | undefined;
+    current = list.getNodeAt(0);
 
     for (let i: number = min; i <= max; i++) {
       verifyNode(current!, i, min, max);
       current = current!.next;
     }
 
-    current = list['getNodeAt'](list.size() - 1) as DoublyNode<number> | undefined;
+    current = list.getNodeAt(list.size() - 1);
 
     for (let i: number = max; i >= min; i--) {
       verifyNode(current!, i, min, max);
@@ -258,7 +258,7 @@ describe('DoublyLinkedList', () => {
     current = list.removeAt(1);
     expect(current).toEqual(2);
 
-    let node: DoublyNode<number> | undefined = list['getNodeAt'](0) as DoublyNode<number> | undefined;
+    let node: DoublyNode<number> | undefined = list.getNodeAt(0);
 
     expect(node).toBeDefined();
 
