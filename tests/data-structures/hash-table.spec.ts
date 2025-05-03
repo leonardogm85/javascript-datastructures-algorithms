@@ -29,17 +29,17 @@ describe('HashTable', () => {
 
     const hashTableMyObject: HashTable<MyObject, MyObject> = new HashTable<MyObject, MyObject>();
 
-    const myObjList: MyObject[] = [];
+    const myObjectList: MyObject[] = [];
 
     for (let i: number = 1; i <= 5; i++) {
-      myObjList.push(new MyObject(i, i + 1));
+      myObjectList.push(new MyObject(i, i + 1));
     }
 
-    expect(hashTableMyObject.hashCode(myObjList[0])).toEqual(1);
-    expect(hashTableMyObject.hashCode(myObjList[1])).toEqual(3);
-    expect(hashTableMyObject.hashCode(myObjList[2])).toEqual(5);
-    expect(hashTableMyObject.hashCode(myObjList[3])).toEqual(7);
-    expect(hashTableMyObject.hashCode(myObjList[4])).toEqual(9);
+    expect(hashTableMyObject.hashCode(myObjectList[0])).toEqual(1);
+    expect(hashTableMyObject.hashCode(myObjectList[1])).toEqual(3);
+    expect(hashTableMyObject.hashCode(myObjectList[2])).toEqual(5);
+    expect(hashTableMyObject.hashCode(myObjectList[3])).toEqual(7);
+    expect(hashTableMyObject.hashCode(myObjectList[4])).toEqual(9);
   });
 
   it('puts undefined and null keys and values', () => {

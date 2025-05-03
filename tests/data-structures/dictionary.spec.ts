@@ -101,20 +101,20 @@ describe('Dictionary', () => {
 
     const size: number = max - min;
 
-    const myObjList: MyObject[] = [];
+    const myObjectList: MyObject[] = [];
 
     for (let i: number = min; i < max; i++) {
-      myObjList.push(new MyObject(i, i + 1));
+      myObjectList.push(new MyObject(i, i + 1));
     }
 
     for (let i: number = min; i < max; i++) {
-      expect(dictionary.set(myObjList[i], myObjList[i])).toBeTruthy();
+      expect(dictionary.set(myObjectList[i], myObjectList[i])).toBeTruthy();
     }
 
     expect(dictionary.size()).toEqual(size);
 
     for (let i: number = min; i < max; i++) {
-      expect(dictionary.get(myObjList[i])).toEqual(myObjList[i]);
+      expect(dictionary.get(myObjectList[i])).toEqual(myObjectList[i]);
     }
 
     const keys: MyObject[] = dictionary.keys();
@@ -122,7 +122,7 @@ describe('Dictionary', () => {
     expect(keys.length).toEqual(size);
 
     for (let i: number = 0; i < keys.length; i++) {
-      expect(keys[i]).toEqual(myObjList[i]);
+      expect(keys[i]).toEqual(myObjectList[i]);
     }
 
     const values: MyObject[] = dictionary.values();
@@ -130,7 +130,7 @@ describe('Dictionary', () => {
     expect(values.length).toEqual(size);
 
     for (let i: number = 0; i < values.length; i++) {
-      expect(values[i]).toEqual(myObjList[i]);
+      expect(values[i]).toEqual(myObjectList[i]);
     }
   });
 
@@ -142,20 +142,20 @@ describe('Dictionary', () => {
 
     const size: number = max - min;
 
-    const myObjList: MyObject[] = [];
+    const myObjectList: MyObject[] = [];
 
     for (let i: number = min; i < max; i++) {
-      myObjList.push(new MyObject(i, i + 1));
+      myObjectList.push(new MyObject(i, i + 1));
     }
 
     for (let i: number = min; i < max; i++) {
-      expect(dictionary.set(myObjList[i], myObjList[i])).toBeTruthy();
+      expect(dictionary.set(myObjectList[i], myObjectList[i])).toBeTruthy();
     }
 
     expect(dictionary.size()).toEqual(size);
 
     for (let i: number = min; i < max; i++) {
-      expect(dictionary.get(myObjList[i])).toEqual(myObjList[i]);
+      expect(dictionary.get(myObjectList[i])).toEqual(myObjectList[i]);
     }
 
     const keys: MyObject[] = dictionary.keys();
@@ -163,7 +163,7 @@ describe('Dictionary', () => {
     expect(keys.length).toEqual(size);
 
     for (let i: number = 0; i < keys.length; i++) {
-      expect(keys[i]).toEqual(myObjList[i]);
+      expect(keys[i]).toEqual(myObjectList[i]);
     }
 
     const values: MyObject[] = dictionary.values();
@@ -171,7 +171,7 @@ describe('Dictionary', () => {
     expect(values.length).toEqual(size);
 
     for (let i: number = 0; i < values.length; i++) {
-      expect(values[i]).toEqual(myObjList[i]);
+      expect(values[i]).toEqual(myObjectList[i]);
     }
   });
 
