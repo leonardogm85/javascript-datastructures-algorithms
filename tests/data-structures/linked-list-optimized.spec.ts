@@ -1,9 +1,9 @@
-import { LinkedList } from '../../src/data-structures/linked-list-with-tail';
+import { LinkedList } from '../../src/data-structures/linked-list-optimized';
 import { defaultEquals } from '../../src/util';
 import { Node } from '../../src/models/linked-list-model';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('LinkedListWithTail', () => {
+describe('LinkedListOtimized', () => {
   function pushesElements(list: LinkedList<number>, min: number, max: number): void {
     for (let i: number = min; i <= max; i++) {
       list.push(i);
