@@ -1,4 +1,4 @@
-import { factorial, factorialIterative } from "../../src/others/factorial";
+import { factorial, factorialIterative } from '../../src/others/factorial';
 
 describe('Factorial', () => {
   it('Iterative Factorial', () => {

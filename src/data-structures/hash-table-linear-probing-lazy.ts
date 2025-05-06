@@ -1,5 +1,5 @@
-import { ValuePairLazy } from "../models/dictionary-model";
-import { IToStringFunction, defaultToString, isNullOrUndefined, isNullOrUndefinedOrWhiteSpace } from "../util";
+import { ValuePairLazy } from '../models/dictionary-model';
+import { IToStringFunction, defaultToString, isNullOrUndefined, isNullOrUndefinedOrWhiteSpace } from '../util';
 
 export class HashTableLinearProbingLazy<K, V> {
 

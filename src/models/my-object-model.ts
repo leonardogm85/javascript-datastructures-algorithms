@@ -5,7 +5,7 @@ export class MyObject {
     public e2: number
   ) { }
 
-  toString() {
+  toString(): string {
     return `${this.e1}|${this.e2}`;
   }
 

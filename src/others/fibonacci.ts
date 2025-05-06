@@ -1,4 +1,4 @@
-import { isNullOrUndefined } from "../util";
+import { isNullOrUndefined } from '../util';
 
 export function fibonacciIterative(n: number): number {
   if (n < 1) {

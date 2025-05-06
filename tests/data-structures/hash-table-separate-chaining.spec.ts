@@ -1,8 +1,8 @@
-import { HashTableSeparateChaining } from "../../src/data-structures/hash-table-separate-chaining";
-import { LinkedList } from "../../src/data-structures/linked-list";
-import { ValuePair } from "../../src/models/dictionary-model";
-import { Node } from "../../src/models/linked-list-model";
-import { MyObject } from "../../src/models/my-object-model";
+import { HashTableSeparateChaining } from '../../src/data-structures/hash-table-separate-chaining';
+import { LinkedList } from '../../src/data-structures/linked-list';
+import { ValuePair } from '../../src/models/dictionary-model';
+import { Node } from '../../src/models/linked-list-model';
+import { MyObject } from '../../src/models/my-object-model';
 
 describe('HashTableSeparateChaining', () => {
   const A: string = 'Jonathan';

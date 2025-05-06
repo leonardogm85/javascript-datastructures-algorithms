@@ -1,4 +1,4 @@
-import { fibonacci, fibonacciMemoization, fibonacciIterative, fibonacciIterativeMemoization } from "../../src/others/fibonacci";
+import { fibonacci, fibonacciMemoization, fibonacciIterative, fibonacciIterativeMemoization } from '../../src/others/fibonacci';
 
 describe('Fibonacci', () => {
   it('Fibonacci Iterative', () => {

@@ -1,6 +1,6 @@
-import { HashTableLinearProbing } from "../../src/data-structures/hash-table-linear-probing";
-import { ValuePair } from "../../src/models/dictionary-model";
-import { MyObject } from "../../src/models/my-object-model";
+import { HashTableLinearProbing } from '../../src/data-structures/hash-table-linear-probing';
+import { ValuePair } from '../../src/models/dictionary-model';
+import { MyObject } from '../../src/models/my-object-model';
 
 describe('HashTableLinearProbing', () => {
   const A: string = 'Jonathan';

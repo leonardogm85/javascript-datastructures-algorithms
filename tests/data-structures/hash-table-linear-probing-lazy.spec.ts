@@ -1,6 +1,6 @@
-import { HashTableLinearProbingLazy } from "../../src/data-structures/hash-table-linear-probing-lazy";
-import { ValuePairLazy } from "../../src/models/dictionary-model";
-import { MyObject } from "../../src/models/my-object-model";
+import { HashTableLinearProbingLazy } from '../../src/data-structures/hash-table-linear-probing-lazy';
+import { ValuePairLazy } from '../../src/models/dictionary-model';
+import { MyObject } from '../../src/models/my-object-model';
 
 describe('HashTableLinearProbingLazy', () => {
   const A: string = 'Jonathan';

@@ -1,6 +1,6 @@
-import { Dictionary } from "../../src/data-structures/dictionary";
-import { ValuePair } from "../../src/models/dictionary-model";
-import { MyObject } from "../../src/models/my-object-model";
+import { Dictionary } from '../../src/data-structures/dictionary';
+import { ValuePair } from '../../src/models/dictionary-model';
+import { MyObject } from '../../src/models/my-object-model';
 
 describe('Dictionary', () => {
   function customToString(key: MyObject) {

@@ -1,4 +1,4 @@
-import { IToStringFunction, defaultToString } from "../util";
+import { IToStringFunction, defaultToString } from '../util';
 
 export class Set<T> {
 

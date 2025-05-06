@@ -1,6 +1,6 @@
-import HashTable from "../../src/data-structures/hash-table";
-import { ValuePair } from "../../src/models/dictionary-model";
-import { MyObject } from "../../src/models/my-object-model";
+import HashTable from '../../src/data-structures/hash-table';
+import { ValuePair } from '../../src/models/dictionary-model';
+import { MyObject } from '../../src/models/my-object-model';
 
 describe('HashTable', () => {
   it('starts empty', () => {

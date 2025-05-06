@@ -1,5 +1,5 @@
-import { ValuePair } from "../models/dictionary-model";
-import { IToStringFunction, defaultToString, isNullOrUndefined } from "../util";
+import { ValuePair } from '../models/dictionary-model';
+import { IToStringFunction, defaultToString, isNullOrUndefined } from '../util';
 
 export class Dictionary<K, V> {
 

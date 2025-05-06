@@ -1,5 +1,5 @@
-import { Set } from "../../src/data-structures/set";
-import { MyObject } from "../../src/models/my-object-model";
+import { Set } from '../../src/data-structures/set';
+import { MyObject } from '../../src/models/my-object-model';
 
 describe('Set', () => {
   function addValues(min: number, max: number): Set<number> {
