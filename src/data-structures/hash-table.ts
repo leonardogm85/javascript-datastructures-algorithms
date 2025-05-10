@@ -1,7 +1,7 @@
 import { ValuePair } from '../models/dictionary-model';
 import { IToStringFunction, defaultToString, isNullOrUndefined } from '../util';
 
-export default class HashTable<K, V> {
+export class HashTable<K, V> {
 
   private table: { [key: string]: ValuePair<K, V> } = {};
 

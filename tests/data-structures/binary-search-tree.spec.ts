@@ -1,5 +1,5 @@
-import { BinarySearchTree } from "../../src/data-structures/binary-search-tree";
-import { Node } from "../../src/models/tree-model";
+import { BinarySearchTree } from '../../src/data-structures/binary-search-tree';
+import { Node } from '../../src/models/tree-model';
 
 describe('BinarySearchTree', () => {
   function insertsElements(tree: BinarySearchTree<number>): void {
