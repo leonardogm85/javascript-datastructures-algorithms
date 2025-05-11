@@ -1,5 +1,7 @@
 import { AVLTree } from "../../src/data-structures/avl-tree";
 
+// TODO: Complete tests
+
 describe('AVLTree', () => {
   it('starts empty', () => {
     const tree: AVLTree<number> = new AVLTree<number>();

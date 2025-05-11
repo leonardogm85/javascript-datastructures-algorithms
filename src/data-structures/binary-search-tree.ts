@@ -7,10 +7,6 @@ export class BinarySearchTree<T> {
 
   constructor(protected compareFn: ICompareFunction<T> = defaultCompare) { }
 
-  getRoot(): Node<T> | undefined {
-    return this.root;
-  }
-
   search(key: T): boolean {
     return this.searchNode(this.root, key);
   }
@@ -163,6 +159,10 @@ export class BinarySearchTree<T> {
       node.right = this.removeNode(node.right, aux.key);
       return node;
     }
+  }
+
+  getRoot(): Node<T> | undefined {
+    return this.root;
   }
 
 }

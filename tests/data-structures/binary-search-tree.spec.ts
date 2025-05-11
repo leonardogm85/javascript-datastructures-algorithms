@@ -1,6 +1,8 @@
 import { BinarySearchTree } from '../../src/data-structures/binary-search-tree';
 import { Node } from '../../src/models/tree-model';
 
+// TODO: Complete tests
+
 describe('BinarySearchTree', () => {
   function insertsElements(tree: BinarySearchTree<number>): void {
     //  n0 ->              11
