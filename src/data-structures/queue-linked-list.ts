@@ -2,7 +2,7 @@ import { DoublyLinkedList } from './doubly-linked-list';
 
 export class QueueLinkedList<T> {
 
-  private items: DoublyLinkedList<T> = new DoublyLinkedList<T>();
+  protected items: DoublyLinkedList<T> = new DoublyLinkedList<T>();
 
   enqueue(element: T): void {
     this.items.push(element);

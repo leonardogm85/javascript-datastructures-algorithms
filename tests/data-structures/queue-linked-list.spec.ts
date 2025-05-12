@@ -35,7 +35,7 @@ describe('QueueLinkedList', () => {
     expect(queue.dequeue()).toEqual(1);
     expect(queue.dequeue()).toEqual(2);
     expect(queue.dequeue()).toEqual(3);
-    expect(queue.dequeue()).toBeUndefined()
+    expect(queue.dequeue()).toBeUndefined();
   });
 
   it('implements FIFO logic', () => {
@@ -53,13 +53,13 @@ describe('QueueLinkedList', () => {
     expect(queue.dequeue()).toEqual(1);
     expect(queue.dequeue()).toEqual(2);
     expect(queue.dequeue()).toEqual(3);
-    expect(queue.dequeue()).toBeUndefined()
+    expect(queue.dequeue()).toBeUndefined();
   });
 
   it('allows to peek at the front element in the queue without dequeuing it', () => {
     const queue: QueueLinkedList<number> = new QueueLinkedList<number>();
 
-    expect(queue.peek()).toBeUndefined()
+    expect(queue.peek()).toBeUndefined();
 
     queue.enqueue(1);
     expect(queue.peek()).toEqual(1);

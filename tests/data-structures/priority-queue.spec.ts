@@ -1,9 +1,9 @@
-import { Queue } from '../../src/data-structures/queue';
+import { PriorityQueue } from '../../src/data-structures/priority-queue';
 import { MyObject } from '../../src/models/my-object-model';
 
 describe('Queue', () => {
   it('starts empty', () => {
-    const queue: Queue<number> = new Queue<number>();
+    const queue: PriorityQueue<number> = new PriorityQueue<number>();
 
     expect(queue.size()).toEqual(0);
 
@@ -11,7 +11,7 @@ describe('Queue', () => {
   });
 
   it('enqueues elements', () => {
-    const queue: Queue<number> = new Queue<number>();
+    const queue: PriorityQueue<number> = new PriorityQueue<number>();
 
     queue.enqueue(1);
     expect(queue.size()).toEqual(1);
@@ -25,8 +25,49 @@ describe('Queue', () => {
     expect(queue.isEmpty()).toBeFalsy();
   });
 
+  it('queues elements in priority order', () => {
+    const queue: PriorityQueue<number> = new PriorityQueue<number>();
+
+    queue.enqueue(1);
+    expect(queue.toString()).toEqual('1');
+
+    queue.enqueue(3);
+    expect(queue.toString()).toEqual('1,3');
+
+    queue.enqueue(5);
+    expect(queue.toString()).toEqual('1,3,5');
+
+    queue.enqueue(7);
+    expect(queue.toString()).toEqual('1,3,5,7');
+
+    queue.enqueue(9);
+    expect(queue.toString()).toEqual('1,3,5,7,9');
+
+    queue.enqueue(2);
+    expect(queue.toString()).toEqual('1,2,3,5,7,9');
+
+    queue.enqueue(4);
+    expect(queue.toString()).toEqual('1,2,3,4,5,7,9');
+
+    queue.enqueue(6);
+    expect(queue.toString()).toEqual('1,2,3,4,5,6,7,9');
+
+    queue.enqueue(8);
+    expect(queue.toString()).toEqual('1,2,3,4,5,6,7,8,9');
+
+    expect(queue.size()).toEqual(9);
+
+    const size: number = queue.size();
+
+    for (let i: number = 0; i < size; i++) {
+      expect(queue.dequeue()).toEqual(i + 1);
+    }
+
+    expect(queue.isEmpty()).toBeTruthy();
+  });
+
   it('dequeue elements', () => {
-    const queue: Queue<number> = new Queue<number>();
+    const queue: PriorityQueue<number> = new PriorityQueue<number>();
 
     queue.enqueue(1);
     queue.enqueue(2);
@@ -39,7 +80,7 @@ describe('Queue', () => {
   });
 
   it('implements FIFO logic', () => {
-    const queue: Queue<number> = new Queue<number>();
+    const queue: PriorityQueue<number> = new PriorityQueue<number>();
 
     queue.enqueue(1);
     expect(queue.peek()).toEqual(1);
@@ -57,7 +98,7 @@ describe('Queue', () => {
   });
 
   it('allows to peek at the front element in the queue without dequeuing it', () => {
-    const queue: Queue<number> = new Queue<number>();
+    const queue: PriorityQueue<number> = new PriorityQueue<number>();
 
     expect(queue.peek()).toBeUndefined();
 
@@ -72,7 +113,7 @@ describe('Queue', () => {
   });
 
   it('returns the correct size', () => {
-    const queue: Queue<number> = new Queue<number>();
+    const queue: PriorityQueue<number> = new PriorityQueue<number>();
 
     expect(queue.size()).toEqual(0);
 
@@ -107,7 +148,7 @@ describe('Queue', () => {
   });
 
   it('returns if it is empty', () => {
-    const queue: Queue<number> = new Queue<number>();
+    const queue: PriorityQueue<number> = new PriorityQueue<number>();
 
     expect(queue.isEmpty()).toBeTruthy();
 
@@ -142,7 +183,7 @@ describe('Queue', () => {
   });
 
   it('clears the queue', () => {
-    const queue: Queue<number> = new Queue<number>();
+    const queue: PriorityQueue<number> = new PriorityQueue<number>();
 
     queue.clear();
     expect(queue.isEmpty()).toBeTruthy();
@@ -156,7 +197,7 @@ describe('Queue', () => {
   });
 
   it('returns toString primitive types', () => {
-    const queueNumber: Queue<number> = new Queue<number>();
+    const queueNumber: PriorityQueue<number> = new PriorityQueue<number>();
 
     expect(queueNumber.toString()).toEqual('');
 
@@ -169,7 +210,7 @@ describe('Queue', () => {
     queueNumber.clear();
     expect(queueNumber.toString()).toEqual('');
 
-    const queueString: Queue<string> = new Queue<string>();
+    const queueString: PriorityQueue<string> = new PriorityQueue<string>();
 
     queueString.enqueue('e1');
     expect(queueString.toString()).toEqual('e1');
@@ -179,7 +220,7 @@ describe('Queue', () => {
   });
 
   it('returns toString objects', () => {
-    const queueMyObject: Queue<MyObject> = new Queue<MyObject>();
+    const queueMyObject: PriorityQueue<MyObject> = new PriorityQueue<MyObject>();
 
     expect(queueMyObject.toString()).toEqual('');
 

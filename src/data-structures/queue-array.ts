@@ -1,6 +1,6 @@
 export class QueueArray<T> {
 
-  private items: T[] = [];
+  protected items: T[] = [];
 
   enqueue(element: T): void {
     this.items.push(element);
