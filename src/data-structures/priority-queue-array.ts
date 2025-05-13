@@ -1,5 +1,5 @@
-import { Compare, defaultCompare, ICompareFunction } from "../util";
-import { QueueArray } from "./queue-array";
+import { Compare, defaultCompare, ICompareFunction } from '../util';
+import { QueueArray } from './queue-array';
 
 export class PriorityQueueArray<T> extends QueueArray<T> {
 

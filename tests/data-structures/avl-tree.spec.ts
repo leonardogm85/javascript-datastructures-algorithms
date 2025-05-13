@@ -1,4 +1,4 @@
-import { AVLTree } from "../../src/data-structures/avl-tree";
+import { AVLTree } from '../../src/data-structures/avl-tree';
 
 // TODO: Complete tests
 

@@ -1,5 +1,5 @@
-import { RedBlackTree } from "../../src/data-structures/red-black-tree";
-import { Colors, RedBlackNode } from "../../src/models/tree-model";
+import { RedBlackTree } from '../../src/data-structures/red-black-tree';
+import { Colors, RedBlackNode } from '../../src/models/tree-model';
 
 // TODO: Complete tests
 

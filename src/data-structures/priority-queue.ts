@@ -1,5 +1,5 @@
-import { Compare, defaultCompare, ICompareFunction } from "../util";
-import { Queue } from "./queue";
+import { Compare, defaultCompare, ICompareFunction } from '../util';
+import { Queue } from './queue';
 
 export class PriorityQueue<T> extends Queue<T> {
 
@@ -10,25 +10,34 @@ export class PriorityQueue<T> extends Queue<T> {
   override enqueue(element: T): void {
     let added: boolean = false;
 
-    const newItems: { [key: number]: T } = {};
+    let current: T | undefined;
+    let next: T | undefined;
 
     for (let i: number = 0; i < this.size(); i++) {
       if (added) {
-        newItems[i + 1] = this.items[i];
-      } else if (!(this.compareFn(element, this.items[i]) === Compare.LESS_THAN)) {
-        newItems[i] = this.items[i];
-      } else {
-        newItems[i] = element;
+
+        current = next;
+        next = this.items[i + 1];
+
+        this.items[i + 1] = current!;
+
+      } else if (this.compareFn(element, this.items[i]) === Compare.LESS_THAN) {
+
+        current = this.items[i];
+        next = this.items[i + 1];
+
+        this.items[i] = element;
+        this.items[i + 1] = current;
+
         added = true;
-        newItems[i + 1] = this.items[i];
+
       }
     }
 
     if (!added) {
-      newItems[this.count] = element;
+      this.items[this.count] = element;
     }
 
-    this.items = newItems;
     this.count++;
   }
 
