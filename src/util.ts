@@ -38,6 +38,14 @@ export function defaultToString<T>(o: T): string {
   return o.toString();
 }
 
+export function reverseCompare<T>(compareFn: ICompareFunction<T>): ICompareFunction<T> {
+  return (a: T, b: T) => compareFn(b, a);
+}
+
+export function swap<T>(array: T[], a: number, b: number) {
+  [array[a], array[b]] = [array[b], array[a]];
+}
+
 export function isNullOrUndefined<T>(o: T) {
   return o === undefined || o === null;
 }

@@ -35,7 +35,7 @@ describe('StackArray', () => {
     expect(stack.pop()).toEqual(3);
     expect(stack.pop()).toEqual(2);
     expect(stack.pop()).toEqual(1);
-    expect(stack.pop()).toBeUndefined()
+    expect(stack.pop()).toBeUndefined();
   });
 
   it('implements LIFO logic', () => {
@@ -48,13 +48,13 @@ describe('StackArray', () => {
     expect(stack.pop()).toEqual(3);
     expect(stack.pop()).toEqual(2);
     expect(stack.pop()).toEqual(1);
-    expect(stack.pop()).toBeUndefined()
+    expect(stack.pop()).toBeUndefined();
   });
 
   it('allows to peek at the top element in he stack without popping it', () => {
     const stack: StackArray<number> = new StackArray<number>();
 
-    expect(stack.peek()).toBeUndefined()
+    expect(stack.peek()).toBeUndefined();
 
     stack.push(1);
     expect(stack.peek()).toEqual(1);
