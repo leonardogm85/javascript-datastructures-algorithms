@@ -92,12 +92,12 @@ export class MinHeap<T> {
 
   heapify(array: T[]): T[] {
     if (array) {
-      this.heap = array;
+      this.heap = [...array];
     }
 
     const maxIndex: number = Math.floor(this.size() / 2) - 1;
 
-    for (let i: number = 0; i <= maxIndex; i++) {
+    for (let i: number = maxIndex; i >= 0; i--) {
       this.siftDown(i);
     }
 

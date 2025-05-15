@@ -75,37 +75,95 @@ describe('Heap', () => {
 
     minValue = 1;
 
+    //  n0 ->  1
     heap.insert(1);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([1]);
 
+    //  n0 ->    1
+    //          /
+    //  n1 ->  3
     heap.insert(3);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([1, 3]);
 
+    //  n0 ->    1
+    //          / \
+    //  n1 ->  3   5
     heap.insert(5);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([1, 3, 5]);
 
+    //  n0 ->      1
+    //            / \
+    //  n1 ->    3   5
+    //          /
+    //  n2 ->  7
     heap.insert(7);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([1, 3, 5, 7]);
 
+    //  n0 ->      1
+    //            / \
+    //  n1 ->    3   5
+    //          / \
+    //  n2 ->  7   9
     heap.insert(9);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([1, 3, 5, 7, 9]);
 
     minValue = 0;
 
+    //  n0 ->        0
+    //             /   \
+    //  n1 ->    3       1
+    //          / \     /
+    //  n2 ->  7   9   5
     heap.insert(0);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([0, 3, 1, 7, 9, 5]);
 
+    //  n0 ->        0
+    //             /   \
+    //  n1 ->    3       1
+    //          / \     / \
+    //  n2 ->  7   9   5   2
     heap.insert(2);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([0, 3, 1, 7, 9, 5, 2]);
 
+    //  n0 ->          0
+    //               /   \
+    //  n1 ->      3       1
+    //            / \     / \
+    //  n2 ->    4   9   5   2
+    //          /
+    //  n3 ->  7
     heap.insert(4);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([0, 3, 1, 4, 9, 5, 2, 7]);
 
+    //  n0 ->          0
+    //               /   \
+    //  n1 ->      3       1
+    //            / \     / \
+    //  n2 ->    4   9   5   2
+    //          / \
+    //  n3 ->  7   6
     heap.insert(6);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([0, 3, 1, 4, 9, 5, 2, 7, 6]);
 
+    //  n0 ->             0
+    //                 /     \
+    //  n1 ->        3         1
+    //             /   \      / \
+    //  n2 ->    4       9   5   2
+    //          / \     /
+    //  n3 ->  7   6   8
     heap.insert(8);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([0, 3, 1, 4, 8, 5, 2, 7, 6, 9]);
 
     expect(heap.isEmpty()).toBeFalsy();
   });
@@ -117,43 +175,101 @@ describe('Heap', () => {
 
     minValue = 1;
 
+    //  n0 ->  1
     heap.insert(1);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([1]);
 
     minValue = 3;
 
+    //  n0 ->    3
+    //          /
+    //  n1 ->  1
     heap.insert(3);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([3, 1]);
 
     minValue = 5;
 
+    //  n0 ->    5
+    //          / \
+    //  n1 ->  1   3
     heap.insert(5);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([5, 1, 3]);
 
     minValue = 7;
 
+    //  n0 ->      7
+    //            / \
+    //  n1 ->    5   3
+    //          /
+    //  n2 ->  1
     heap.insert(7);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([7, 5, 3, 1]);
 
     minValue = 9;
 
+    //  n0 ->      9
+    //            / \
+    //  n1 ->    7   3
+    //          / \
+    //  n2 ->  1   5
     heap.insert(9);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([9, 7, 3, 1, 5]);
 
+    //  n0 ->        9
+    //             /   \
+    //  n1 ->    7       3
+    //          / \     /
+    //  n2 ->  1   5   0
     heap.insert(0);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([9, 7, 3, 1, 5, 0]);
 
+    //  n0 ->        9
+    //             /   \
+    //  n1 ->    7       3
+    //          / \     / \
+    //  n2 ->  1   5   0   2
     heap.insert(2);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([9, 7, 3, 1, 5, 0, 2]);
 
+    //  n0 ->          9
+    //               /   \
+    //  n1 ->      7       3
+    //            / \     / \
+    //  n2 ->    4   5   0   2
+    //          /
+    //  n3 ->  1
     heap.insert(4);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([9, 7, 3, 4, 5, 0, 2, 1]);
 
+    //  n0 ->          9
+    //               /   \
+    //  n1 ->      7       3
+    //            / \     / \
+    //  n2 ->    6   5   0   2
+    //          / \
+    //  n3 ->  1   4
     heap.insert(6);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([9, 7, 3, 6, 5, 0, 2, 1, 4]);
 
+    //  n0 ->             9
+    //                 /     \
+    //  n1 ->        8         3
+    //             /   \      / \
+    //  n2 ->    6       7   0   2
+    //          / \     /
+    //  n3 ->  1   4   5
     heap.insert(8);
     expect(heap.findMinimum()).toEqual(minValue);
+    expect(heap.toArray()).toEqual([9, 8, 3, 6, 7, 0, 2, 1, 4, 5]);
 
     expect(heap.isEmpty()).toBeFalsy();
   });
@@ -165,15 +281,64 @@ describe('Heap', () => {
       heap.insert(i);
     }
 
+    //  n0 ->          1
+    //               /   \
+    //  n1 ->      2       3
+    //            / \     / \
+    //  n2 ->    4   5   6   7
+    //          / \
+    //  n3 ->  8   9
     const array: number[][] = [
+      //  n0 ->          2
+      //               /   \
+      //  n1 ->      4       3
+      //            / \     / \
+      //  n2 ->    8   5   6   7
+      //          /
+      //  n3 ->  9
       [2, 4, 3, 8, 5, 6, 7, 9],
+
+      //  n0 ->        3
+      //             /   \
+      //  n1 ->    4       6
+      //          / \     / \
+      //  n2 ->  8   5   9   7
       [3, 4, 6, 8, 5, 9, 7],
+
+      //  n0 ->        4
+      //             /   \
+      //  n1 ->    5       6
+      //          / \     /
+      //  n2 ->  8   7   9
       [4, 5, 6, 8, 7, 9],
+
+      //  n0 ->        5
+      //             /   \
+      //  n1 ->    7       6
+      //          / \
+      //  n2 ->  8   9
       [5, 7, 6, 8, 9],
+
+      //  n0 ->        6
+      //             /   \
+      //  n1 ->    7       9
+      //          /
+      //  n2 ->  8
       [6, 7, 9, 8],
+
+      //  n0 ->      7
+      //           /   \
+      //  n1 ->  8       9
       [7, 8, 9],
+
+      //  n0 ->      8
+      //           /
+      //  n1 ->  9
       [8, 9],
+
+      //  n0 ->  9
       [9],
+
       []
     ];
 
@@ -192,15 +357,64 @@ describe('Heap', () => {
       heap.insert(i);
     }
 
+    //  n0 ->          9
+    //               /   \
+    //  n1 ->      8       6
+    //            / \     / \
+    //  n2 ->    7   3   2   5
+    //          / \
+    //  n3 ->  1   4
     const array: number[][] = [
+      //  n0 ->          8
+      //               /   \
+      //  n1 ->      7       6
+      //            / \     / \
+      //  n2 ->    4   3   2   5
+      //          /
+      //  n3 ->  1
       [8, 7, 6, 4, 3, 2, 5, 1],
+
+      //  n0 ->        7
+      //             /   \
+      //  n1 ->    4       6
+      //          / \     / \
+      //  n2 ->  1   3   2   5
       [7, 4, 6, 1, 3, 2, 5],
+
+      //  n0 ->        6
+      //             /   \
+      //  n1 ->    4       5
+      //          / \     /
+      //  n2 ->  1   3   2
       [6, 4, 5, 1, 3, 2],
+
+      //  n0 ->        5
+      //             /   \
+      //  n1 ->    4       2
+      //          / \
+      //  n2 ->  1   3
       [5, 4, 2, 1, 3],
+
+      //  n0 ->        4
+      //             /   \
+      //  n1 ->    3       2
+      //          /
+      //  n2 ->  1
       [4, 3, 2, 1],
+
+      //  n0 ->      3
+      //           /   \
+      //  n1 ->  1       2
       [3, 1, 2],
+
+      //  n0 ->      2
+      //           /
+      //  n1 ->  1
       [2, 1],
+
+      //  n0 ->  1
       [1],
+
       []
     ];
 
@@ -217,11 +431,31 @@ describe('Heap', () => {
 
     const array: number[] = [];
 
-    for (let i: number = 10; i >= 1; i--) {
+    for (let i: number = 9; i >= 1; i--) {
       array.push(i);
     }
 
-    expect(heap.heapify(array)).toEqual(array);
+    //  n0 ->          9
+    //               /   \
+    //  n1 ->      8       7
+    //            / \     / \
+    //  n2 ->    6   5   4   3
+    //          / \
+    //  n3 ->  2   1
+
+    // [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+    expect(heap.heapify(array)).toEqual([1, 2, 3, 6, 5, 4, 7, 8, 9]);
+
+    //  n0 ->          1
+    //               /   \
+    //  n1 ->      2       3
+    //            / \     / \
+    //  n2 ->    6   5   4   7
+    //          / \
+    //  n3 ->  8   9
+
+    // [1, 2, 3, 6, 5, 4, 7, 8, 9]
   });
 
   it('performs heapify in the MaxHeap', () => {
@@ -229,11 +463,31 @@ describe('Heap', () => {
 
     const array: number[] = [];
 
-    for (let i: number = 1; i <= 10; i++) {
+    for (let i: number = 1; i <= 9; i++) {
       array.push(i);
     }
 
-    expect(heap.heapify(array)).toEqual(array);
+    //  n0 ->          1
+    //               /   \
+    //  n1 ->      2       3
+    //            / \     / \
+    //  n2 ->    4   5   6   7
+    //          / \
+    //  n3 ->  8   9
+
+    // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    expect(heap.heapify(array)).toEqual([9, 8, 7, 4, 5, 6, 3, 2, 1]);
+
+    //  n0 ->          9
+    //               /   \
+    //  n1 ->      8       7
+    //            / \     / \
+    //  n2 ->    4   5   6   3
+    //          / \
+    //  n3 ->  2   1
+
+    // [9, 8, 7, 4, 5, 6, 3, 2, 1]
   });
 
   it('returns the correct size: MinHeap', () => {
