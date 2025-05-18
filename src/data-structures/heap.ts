@@ -1,4 +1,3 @@
-import { heapSort } from '../algorithms/sorting/heap-sort';
 import { Compare, defaultCompare, ICompareFunction, isNullOrUndefined, reverseCompare, swap } from '../util';
 
 export class MinHeap<T> {
@@ -122,7 +121,7 @@ export class MinHeap<T> {
   }
 
   toString(): string {
-    return heapSort(this.heap, this.compareFn).toString();
+    return this.heap.sort(this.compareFn).toString();
   }
 
 }
