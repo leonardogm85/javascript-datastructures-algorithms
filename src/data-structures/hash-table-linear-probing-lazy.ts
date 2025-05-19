@@ -1,11 +1,11 @@
 import { ValuePairLazy } from '../models/dictionary-model';
-import { IToStringFunction, defaultToString, isNullOrUndefined, isNullOrUndefinedOrWhiteSpace } from '../util';
+import { ToStringFunction, defaultToString, isNullOrUndefined, isNullOrUndefinedOrWhiteSpace } from '../util';
 
 export class HashTableLinearProbingLazy<K, V> {
 
   private table: { [key: string]: ValuePairLazy<K, V> } = {};
 
-  constructor(private toStrFn: IToStringFunction<K> = defaultToString) { }
+  constructor(private toStrFn: ToStringFunction<K> = defaultToString) { }
 
   private loseloseHashCode(key: K): number {
     if (typeof key === 'number') {

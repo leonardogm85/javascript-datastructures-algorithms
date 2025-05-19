@@ -1,12 +1,12 @@
-import { Colors, RedBlackNode } from '../models/tree-model';
-import { Compare, defaultCompare, ICompareFunction } from '../util';
+import { Color, RedBlackNode } from '../models/tree-model';
+import { Compare, defaultCompare, CompareFunction } from '../util';
 import { BinarySearchTree } from './binary-search-tree';
 
 export class RedBlackTree<T> extends BinarySearchTree<T> {
 
   protected override root?: RedBlackNode<T> | undefined = undefined;
 
-  constructor(compareFn: ICompareFunction<T> = defaultCompare) {
+  constructor(compareFn: CompareFunction<T> = defaultCompare) {
     super(compareFn);
   }
 
@@ -85,7 +85,7 @@ export class RedBlackTree<T> extends BinarySearchTree<T> {
   insert(key: T): void {
     if (!this.root) {
       this.root = new RedBlackNode(key);
-      this.root.color = Colors.BLACK;
+      this.root.color = Color.BLACK;
     } else {
       const newNode: RedBlackNode<T> = this.insertNode(this.root, key);
       this.fixTreeProperties(newNode);
@@ -125,9 +125,9 @@ export class RedBlackTree<T> extends BinarySearchTree<T> {
 
         // case 1: uncle of node is also red - only recoloring
         if (uncle && uncle.isRed()) {
-          grandParent.color = Colors.RED;
-          parent.color = Colors.BLACK;
-          uncle.color = Colors.BLACK;
+          grandParent.color = Color.RED;
+          parent.color = Color.BLACK;
+          uncle.color = Color.BLACK;
           node = grandParent;
         } else {
           // case 2: node is right child - left rotate
@@ -139,8 +139,8 @@ export class RedBlackTree<T> extends BinarySearchTree<T> {
 
           // case 3: node is left child - right rotate
           this.rotationLL(grandParent);
-          parent.color = Colors.BLACK;
-          grandParent.color = Colors.RED;
+          parent.color = Color.BLACK;
+          grandParent.color = Color.RED;
           node = parent;
         }
       } else if (grandParent && grandParent.right === parent) {
@@ -150,9 +150,9 @@ export class RedBlackTree<T> extends BinarySearchTree<T> {
 
         // case 1: uncle is read - only recoloring
         if (uncle && uncle.isRed()) {
-          grandParent.color = Colors.RED;
-          parent.color = Colors.BLACK;
-          uncle.color = Colors.BLACK;
+          grandParent.color = Color.RED;
+          parent.color = Color.BLACK;
+          uncle.color = Color.BLACK;
           node = grandParent;
         } else {
           // case 2: node is left child - left rotate
@@ -164,14 +164,14 @@ export class RedBlackTree<T> extends BinarySearchTree<T> {
 
           // case 3: node is right child - left rotate
           this.rotationRR(grandParent);
-          parent.color = Colors.BLACK;
-          grandParent.color = Colors.RED;
+          parent.color = Color.BLACK;
+          grandParent.color = Color.RED;
           node = parent;
         }
       }
     }
 
-    this.root!.color = Colors.BLACK;
+    this.root!.color = Color.BLACK;
   }
 
   getRoot(): RedBlackNode<T> | undefined {

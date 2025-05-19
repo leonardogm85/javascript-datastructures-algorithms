@@ -1,10 +1,10 @@
 import { BinarySearchTree } from './binary-search-tree';
 import { BalanceFactor, Node } from '../models/tree-model';
-import { Compare, defaultCompare, ICompareFunction } from '../util';
+import { Compare, defaultCompare, CompareFunction } from '../util';
 
 export class AVLTree<T> extends BinarySearchTree<T> {
 
-  constructor(compareFn: ICompareFunction<T> = defaultCompare) {
+  constructor(compareFn: CompareFunction<T> = defaultCompare) {
     super(compareFn);
   }
 

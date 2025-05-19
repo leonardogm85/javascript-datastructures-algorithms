@@ -1,10 +1,10 @@
-import { Compare, defaultCompare, ICompareFunction, isNullOrUndefined, reverseCompare, swap } from '../util';
+import { Compare, defaultCompare, CompareFunction, isNullOrUndefined, reverseCompare, swap } from '../util';
 
 export class MinHeap<T> {
 
   private heap: T[] = [];
 
-  constructor(private compareFn: ICompareFunction<T> = defaultCompare) { }
+  constructor(private compareFn: CompareFunction<T> = defaultCompare) { }
 
   private getLeftIndex(index: number): number {
     return 2 * index + 1;
@@ -128,7 +128,7 @@ export class MinHeap<T> {
 
 export class MaxHeap<T> extends MinHeap<T> {
 
-  constructor(compareFn: ICompareFunction<T> = defaultCompare) {
+  constructor(compareFn: CompareFunction<T> = defaultCompare) {
     super(reverseCompare(compareFn));
   }
 

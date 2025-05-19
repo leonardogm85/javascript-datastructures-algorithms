@@ -1,13 +1,13 @@
 import { LinkedList } from './linked-list';
 import { ValuePair } from '../models/dictionary-model';
 import { Node } from '../models/linked-list-model';
-import { IToStringFunction, defaultToString, isNullOrUndefined } from '../util';
+import { ToStringFunction, defaultToString, isNullOrUndefined } from '../util';
 
 export class HashTableSeparateChaining<K, V> {
 
   private table: { [key: string]: LinkedList<ValuePair<K, V>> } = {};
 
-  constructor(private toStrFn: IToStringFunction<K> = defaultToString) { }
+  constructor(private toStrFn: ToStringFunction<K> = defaultToString) { }
 
   private loseloseHashCode(key: K): number {
     if (typeof key === 'number') {

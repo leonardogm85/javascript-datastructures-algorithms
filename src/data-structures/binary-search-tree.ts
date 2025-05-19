@@ -1,11 +1,11 @@
 import { Node } from '../models/tree-model';
-import { Compare, ICompareFunction, defaultCompare } from '../util';
+import { Compare, CompareFunction, defaultCompare } from '../util';
 
 export class BinarySearchTree<T> {
 
   protected root?: Node<T> = undefined;
 
-  constructor(protected compareFn: ICompareFunction<T> = defaultCompare) { }
+  constructor(protected compareFn: CompareFunction<T> = defaultCompare) { }
 
   search(key: T): boolean {
     return this.searchNode(this.root, key);

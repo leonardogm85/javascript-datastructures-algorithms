@@ -1,4 +1,4 @@
-import { defaultEquals, IEqualsFunction } from '../util';
+import { defaultEquals, EqualsFunction } from '../util';
 import { DoublyNode } from '../models/linked-list-model';
 import { LinkedList } from './linked-list';
 
@@ -7,7 +7,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
   protected override head?: DoublyNode<T> = undefined;
   protected tail?: DoublyNode<T> = undefined;
 
-  constructor(equalsFn: IEqualsFunction<T> = defaultEquals) {
+  constructor(equalsFn: EqualsFunction<T> = defaultEquals) {
     super(equalsFn);
   }
 

@@ -1,8 +1,7 @@
 import { parenthesesChecker } from '../../src/others/balanced-symbols';
 
 describe('Balanced Symbols', () => {
-
-  it('empty to be falsy', () => {
+  it('empty to be truthy', () => {
     expect(parenthesesChecker('')).toBeTruthy();
   });
 

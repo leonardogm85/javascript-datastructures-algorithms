@@ -42,7 +42,7 @@ export function baseConverter(decimal: number, base: number): string {
   }
 
   while (!stack.isEmpty()) {
-    baseString += digits[stack.pop()!];
+    baseString += digits.at(stack.pop()!)!;
   }
 
   return baseString;

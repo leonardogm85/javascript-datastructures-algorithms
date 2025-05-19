@@ -1,7 +1,7 @@
 import { heapSort } from '../../src/algorithms/sorting/heap-sort';
 import { MaxHeap, MinHeap } from '../../src/data-structures/heap';
 import { MyObject } from '../../src/models/my-object-model';
-import { defaultCompare, ICompareFunction, reverseCompare } from '../../src/util';
+import { defaultCompare, CompareFunction, reverseCompare } from '../../src/util';
 
 describe('Heap', () => {
   it('starts empty MinHeap', () => {
@@ -829,7 +829,7 @@ describe('Heap', () => {
   it('Heap Sort: MinHeap', () => {
     const array: number[] = [3, 2, 5, 6, 1, 7, 8, 9];
 
-    const compareFn: ICompareFunction<number> = defaultCompare;
+    const compareFn: CompareFunction<number> = defaultCompare;
 
     expect(heapSort(array, compareFn)).toEqual([1, 2, 3, 5, 6, 7, 8, 9]);
   });
@@ -837,7 +837,7 @@ describe('Heap', () => {
   it('Heap Sort: MaxHeap', () => {
     const array: number[] = [3, 2, 5, 6, 1, 7, 8, 9];
 
-    const compareFn: ICompareFunction<number> = reverseCompare(defaultCompare);
+    const compareFn: CompareFunction<number> = reverseCompare(defaultCompare);
 
     expect(heapSort(array, compareFn)).toEqual([9, 8, 7, 6, 5, 3, 2, 1]);
   });

@@ -1,10 +1,10 @@
-import { IToStringFunction, defaultToString } from '../util';
+import { ToStringFunction, defaultToString } from '../util';
 
 export class HashSet<T> {
 
   private items: { [key: number]: T } = {};
 
-  constructor(private toStrFn: IToStringFunction<T> = defaultToString) { }
+  constructor(private toStrFn: ToStringFunction<T> = defaultToString) { }
 
   private loseloseHashCode(value: T): number {
     if (typeof value === 'number') {

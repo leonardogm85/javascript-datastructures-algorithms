@@ -1,8 +1,8 @@
-export type IEqualsFunction<T> = (a: T, b: T) => boolean;
+export type EqualsFunction<T> = (a: T, b: T) => boolean;
 
-export type ICompareFunction<T> = (a: T, b: T) => number;
+export type CompareFunction<T> = (a: T, b: T) => number;
 
-export type IToStringFunction<T> = (o: T) => string;
+export type ToStringFunction<T> = (o: T) => string;
 
 export enum Compare {
   LESS_THAN = -1,
@@ -38,18 +38,22 @@ export function defaultToString<T>(o: T): string {
   return o.toString();
 }
 
-export function reverseCompare<T>(compareFn: ICompareFunction<T>): ICompareFunction<T> {
+export function reverseCompare<T>(compareFn: CompareFunction<T>): CompareFunction<T> {
   return (a: T, b: T) => compareFn(b, a);
 }
 
-export function swap<T>(array: T[], a: number, b: number) {
+export function swap<T>(array: T[], a: number, b: number): void {
   [array[a], array[b]] = [array[b], array[a]];
 }
 
-export function isNullOrUndefined<T>(o: T) {
+export function isNullOrUndefined<T>(o: T): boolean {
   return o === undefined || o === null;
 }
 
-export function isNullOrUndefinedOrWhiteSpace(o: string) {
-  return o === undefined || o === null || o === '';
+export function isNullOrUndefinedOrWhiteSpace(o: string): boolean {
+  if (isNullOrUndefined(o)) {
+    return true;
+  }
+
+  return o === '';
 }

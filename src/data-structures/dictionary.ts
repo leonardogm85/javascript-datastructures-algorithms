@@ -1,11 +1,11 @@
 import { ValuePair } from '../models/dictionary-model';
-import { IToStringFunction, defaultToString, isNullOrUndefined } from '../util';
+import { ToStringFunction, defaultToString, isNullOrUndefined } from '../util';
 
 export class Dictionary<K, V> {
 
   private table: { [key: string]: ValuePair<K, V> } = {};
 
-  constructor(private toStrFn: IToStringFunction<K> = defaultToString) { }
+  constructor(private toStrFn: ToStringFunction<K> = defaultToString) { }
 
   set(key: K, value: V): boolean {
     if (isNullOrUndefined(key) || isNullOrUndefined(value)) {

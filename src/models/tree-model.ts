@@ -19,13 +19,13 @@ export class RedBlackNode<K> extends Node<K> {
     override left?: RedBlackNode<K>,
     override right?: RedBlackNode<K>,
     public parent?: RedBlackNode<K>,
-    public color: Colors = Colors.RED
+    public color: Color = Color.RED
   ) {
     super(key, left, right);
   }
 
   isRed(): boolean {
-    return this.color === Colors.RED;
+    return this.color === Color.RED;
   }
 
 }
@@ -38,7 +38,7 @@ export enum BalanceFactor {
   UNBALANCED_LEFT = 5
 }
 
-export enum Colors {
+export enum Color {
   RED = 0,
   BLACK = 1
 }

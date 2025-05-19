@@ -1,12 +1,12 @@
-import { Compare, IEqualsFunction, ICompareFunction, defaultEquals, defaultCompare } from '../util';
+import { Compare, EqualsFunction, CompareFunction, defaultEquals, defaultCompare } from '../util';
 import { Node } from '../models/linked-list-model';
 import { LinkedList } from './linked-list';
 
 export class SortedLinkedList<T> extends LinkedList<T> {
 
   constructor(
-    equalsFn: IEqualsFunction<T> = defaultEquals,
-    protected compareFn: ICompareFunction<T> = defaultCompare
+    equalsFn: EqualsFunction<T> = defaultEquals,
+    protected compareFn: CompareFunction<T> = defaultCompare
   ) {
     super(equalsFn);
   }

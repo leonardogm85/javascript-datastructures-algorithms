@@ -1,10 +1,10 @@
-import { IToStringFunction, defaultToString } from '../util';
+import { ToStringFunction, defaultToString } from '../util';
 
 export class Set<T> {
 
   private items: { [key: string]: T } = {};
 
-  constructor(private toStrFn: IToStringFunction<T> = defaultToString) { }
+  constructor(private toStrFn: ToStringFunction<T> = defaultToString) { }
 
   add(element: T): boolean {
     if (this.has(element)) {

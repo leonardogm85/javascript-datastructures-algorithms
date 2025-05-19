@@ -1,9 +1,9 @@
-export type ITowerOfHanoiModel = {
+export interface TowerOfHanoiModel {
   source: string,
   helper: string,
   dest: string
 };
 
-export type ITowerOfHanoiProperty = keyof ITowerOfHanoiModel;
+export type TowerOfHanoiProperty = keyof TowerOfHanoiModel;
 
-export type ITowerOfHanoiPartial = Partial<ITowerOfHanoiModel>;
+export type TowerOfHanoiPartial = Partial<TowerOfHanoiModel>;

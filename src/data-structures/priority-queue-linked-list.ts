@@ -1,9 +1,9 @@
-import { Compare, defaultCompare, ICompareFunction } from '../util';
+import { Compare, defaultCompare, CompareFunction } from '../util';
 import { QueueLinkedList } from './queue-linked-list';
 
 export class PriorityQueueLinkedList<T> extends QueueLinkedList<T> {
 
-  constructor(private compareFn: ICompareFunction<T> = defaultCompare) {
+  constructor(private compareFn: CompareFunction<T> = defaultCompare) {
     super();
   }
 

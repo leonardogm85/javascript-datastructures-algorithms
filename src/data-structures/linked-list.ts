@@ -1,4 +1,4 @@
-import { defaultEquals, IEqualsFunction } from '../util';
+import { defaultEquals, EqualsFunction } from '../util';
 import { Node } from '../models/linked-list-model';
 
 export class LinkedList<T> {
@@ -6,7 +6,7 @@ export class LinkedList<T> {
   protected count: number = 0;
   protected head?: Node<T> = undefined;
 
-  constructor(protected equalsFn: IEqualsFunction<T> = defaultEquals) { }
+  constructor(protected equalsFn: EqualsFunction<T> = defaultEquals) { }
 
   getNodeAt(index: number): Node<T> | undefined {
     if (index < 0 || index > this.size()) {

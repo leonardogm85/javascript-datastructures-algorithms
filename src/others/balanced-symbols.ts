@@ -12,11 +12,11 @@ export function parenthesesChecker(symbols: string): boolean {
   let symbol: string | undefined;
 
   while (index < symbols.length && balanced) {
-    symbol = symbols[index];
+    symbol = symbols.at(index);
 
-    if (opens.indexOf(symbol) >= 0) {
-      stack.push(symbol);
-    } else if (stack.isEmpty() || opens.indexOf(stack.pop()!) !== closers.indexOf(symbol)) {
+    if (opens.indexOf(symbol!) >= 0) {
+      stack.push(symbol!);
+    } else if (stack.isEmpty() || opens.indexOf(stack.pop()!) !== closers.indexOf(symbol!)) {
       balanced = false;
     }
 
