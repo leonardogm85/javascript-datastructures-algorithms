@@ -76,7 +76,7 @@ export class Set<T> {
   }
 
   isSubsetOf(otherSet: Set<T>): boolean {
-    return this.values().every((value) => otherSet.has(value));
+    return this.values().every(value => otherSet.has(value));
   }
 
   isEmpty(): boolean {
