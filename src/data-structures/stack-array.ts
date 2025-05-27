@@ -27,7 +27,7 @@ export class StackArray<T> {
   }
 
   toArray(): T[] {
-    return this.items;
+    return [...this.items];
   }
 
   toString(): string {

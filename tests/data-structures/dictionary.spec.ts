@@ -9,7 +9,6 @@ describe('Dictionary', () => {
 
   it('starts empty', () => {
     const dictionary: Dictionary<number, number> = new Dictionary<number, number>();
-
     expect(dictionary.size()).toEqual(0);
     expect(dictionary.isEmpty()).toBeTruthy();
   });

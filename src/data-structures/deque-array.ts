@@ -39,7 +39,7 @@ export class DequeArray<T> {
   }
 
   toArray(): T[] {
-    return this.items;
+    return [...this.items];
   }
 
   toString(): string {

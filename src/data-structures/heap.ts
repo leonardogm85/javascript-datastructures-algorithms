@@ -1,4 +1,4 @@
-import { Compare, defaultCompare, CompareFunction, isNullOrUndefined, reverseCompare, swap } from '../util';
+import { Compare, CompareFunction, defaultCompare, isNullOrUndefined, reverseCompare, swap } from '../util';
 
 export class MinHeap<T> {
 
@@ -101,7 +101,7 @@ export class MinHeap<T> {
       this.siftDown(i);
     }
 
-    return this.heap;
+    return this.toArray();
   }
 
   toArray(): T[] {

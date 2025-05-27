@@ -1,7 +1,7 @@
 import { heapSort } from '../../src/algorithms/sorting/heap-sort';
 import { MaxHeap, MinHeap } from '../../src/data-structures/heap';
 import { MyObject } from '../../src/models/my-object-model';
-import { defaultCompare, CompareFunction, reverseCompare } from '../../src/util';
+import { CompareFunction, defaultCompare, reverseCompare } from '../../src/util';
 
 describe('Heap', () => {
   it('starts empty MinHeap', () => {

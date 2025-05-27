@@ -1,5 +1,5 @@
-import { defaultEquals, EqualsFunction } from '../util';
 import { Node } from '../models/linked-list-model';
+import { defaultEquals, EqualsFunction } from '../util';
 import { LinkedList } from './linked-list';
 
 export class CircularLinkedList<T> extends LinkedList<T> {

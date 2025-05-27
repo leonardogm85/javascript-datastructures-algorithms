@@ -1,15 +1,16 @@
-import { defaultEquals, EqualsFunction } from '../util';
 import { Node } from '../models/linked-list-model';
+import { defaultEquals, EqualsFunction } from '../util';
+import { LinkedList } from './linked-list';
 
-export class LinkedList<T> {
+export class OptimizedLinkedList<T> extends LinkedList<T> {
 
-  protected count: number = 0;
-  protected head?: Node<T> = undefined;
   protected tail?: Node<T> = undefined;
 
-  constructor(protected equalsFn: EqualsFunction<T> = defaultEquals) { }
+  constructor(equalsFn: EqualsFunction<T> = defaultEquals) {
+    super(equalsFn);
+  }
 
-  getNodeAt(index: number): Node<T> | undefined {
+  override getNodeAt(index: number): Node<T> | undefined {
     if (index < 0 || index > this.size()) {
       return undefined;
     }
@@ -31,11 +32,7 @@ export class LinkedList<T> {
     return current;
   }
 
-  getElementAt(index: number): T | undefined {
-    return this.getNodeAt(index)?.element;
-  }
-
-  push(element: T): void {
+  override push(element: T): void {
     const node: Node<T> = new Node(element);
 
     if (this.isEmpty()) {
@@ -48,7 +45,7 @@ export class LinkedList<T> {
     this.count++;
   }
 
-  insertAt(element: T, index: number): boolean {
+  override insertAt(element: T, index: number): boolean {
     if (index < 0 || index > this.size()) {
       return false;
     }
@@ -77,7 +74,7 @@ export class LinkedList<T> {
     return true;
   }
 
-  removeAt(index: number): T | undefined {
+  override removeAt(index: number): T | undefined {
     if (index < 0 || index >= this.size()) {
       return undefined;
     }
@@ -108,11 +105,7 @@ export class LinkedList<T> {
     return current?.element;
   }
 
-  remove(element: T): T | undefined {
-    return this.removeAt(this.indexOf(element));
-  }
-
-  indexOf(element: T): number {
+  override indexOf(element: T): number {
     if (this.size() > 0 && this.equalsFn(element, this.head!.element)) {
       return 0;
     }
@@ -134,43 +127,13 @@ export class LinkedList<T> {
     return -1;
   }
 
-  isEmpty(): boolean {
-    return this.size() === 0;
-  }
-
-  size(): number {
-    return this.count;
-  }
-
-  getHead(): T | undefined {
-    return this.head?.element;
+  override clear(): void {
+    super.clear();
+    this.tail = undefined;
   }
 
   getTail(): T | undefined {
     return this.tail?.element;
-  }
-
-  clear(): void {
-    this.head = undefined;
-    this.tail = undefined;
-    this.count = 0;
-  }
-
-  toString(): string {
-    if (this.isEmpty()) {
-      return '';
-    }
-
-    let objString: string = `${this.head!.element}`;
-
-    let current: Node<T> | undefined = this.head!.next;
-
-    for (let i: number = 1; i < this.size(); i++) {
-      objString = `${objString},${current!.element}`;
-      current = current!.next;
-    }
-
-    return objString;
   }
 
 }

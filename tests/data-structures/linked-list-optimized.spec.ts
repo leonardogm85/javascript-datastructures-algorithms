@@ -1,16 +1,16 @@
-import { LinkedList } from '../../src/data-structures/linked-list-optimized';
-import { defaultEquals } from '../../src/util';
+import { OptimizedLinkedList } from '../../src/data-structures/optimized-linked-list';
 import { Node } from '../../src/models/linked-list-model';
 import { MyObject } from '../../src/models/my-object-model';
+import { defaultEquals } from '../../src/util';
 
 describe('LinkedListOtimized', () => {
-  function pushesElements(list: LinkedList<number>, min: number, max: number): void {
+  function pushesElements(list: OptimizedLinkedList<number>, min: number, max: number): void {
     for (let i: number = min; i <= max; i++) {
       list.push(i);
     }
   }
 
-  function verifyList(list: LinkedList<number>, min: number, max: number): void {
+  function verifyList(list: OptimizedLinkedList<number>, min: number, max: number): void {
     let current: Node<number> | undefined = list.getNodeAt(0);
 
     for (let i: number = min; i <= max; i++) {
@@ -29,14 +29,14 @@ describe('LinkedListOtimized', () => {
   }
 
   it('starts empty', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     expect(list.size()).toEqual(0);
     expect(list.isEmpty()).toBeTruthy();
     expect(list.getHead()).toBeUndefined();
   });
 
   it('pushes elements', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
     pushesElements(list, min, max);
@@ -44,12 +44,12 @@ describe('LinkedListOtimized', () => {
   });
 
   it('returns element at specific index: invalid position', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     expect(list.getElementAt(3)).toBeUndefined();
   });
 
   it('returns element at specific index: valid position', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -66,7 +66,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('inserts elements first position empty list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 1;
     expect(list.insertAt(1, 0)).toBeTruthy();
@@ -74,7 +74,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('inserts elements first position not empty list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 2;
     expect(list.insertAt(max, 0)).toBeTruthy();
@@ -83,12 +83,12 @@ describe('LinkedListOtimized', () => {
   });
 
   it('inserts elements invalid position empty list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     expect(list.insertAt(1, 1)).toBeFalsy();
   });
 
   it('inserts elements invalid position not empty list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 1;
     expect(list.insertAt(1, 0)).toBeTruthy();
@@ -97,7 +97,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('inserts elements in the middle of list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
     expect(list.insertAt(3, 0)).toBeTruthy();
@@ -107,7 +107,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('inserts elements at the end of list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 5;
 
@@ -119,7 +119,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('returns index of elements', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -135,7 +135,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('removes valid elements', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -150,7 +150,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('removes invalid elements', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -167,7 +167,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('removes element invalid position empty list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -180,7 +180,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('removes element invalid position not empty list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -197,7 +197,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('removes first element list single element', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const element: number = 1;
 
     list.push(element);
@@ -212,7 +212,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('removes first element list multiple elements', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     let min: number = 1;
     let max: number = 3;
 
@@ -227,7 +227,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('removes element from middle of list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -255,7 +255,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('removes element from end of list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     let min: number = 1;
     let max: number = 3;
 
@@ -276,7 +276,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('returns the head of the list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     expect(list.getHead()).toBeUndefined();
 
     let head: number | undefined = 1;
@@ -321,7 +321,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('returns the tail of the list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     expect(list.getTail()).toBeUndefined();
 
     let tail: number | undefined = 1;
@@ -368,7 +368,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('returns the correct size', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -388,7 +388,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('returns if it is empty', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -415,7 +415,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('clears the list', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
     const min: number = 1;
     const max: number = 3;
 
@@ -433,7 +433,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('returns toString primitive types', () => {
-    const list: LinkedList<number> = new LinkedList<number>(defaultEquals);
+    const list: OptimizedLinkedList<number> = new OptimizedLinkedList<number>(defaultEquals);
 
     expect(list.toString()).toEqual('');
 
@@ -448,7 +448,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('returns toString primitive types: string', () => {
-    const list: LinkedList<string> = new LinkedList<string>(defaultEquals);
+    const list: OptimizedLinkedList<string> = new OptimizedLinkedList<string>(defaultEquals);
 
     list.push('e1');
     expect(list.toString()).toEqual('e1');
@@ -458,7 +458,7 @@ describe('LinkedListOtimized', () => {
   });
 
   it('returns toString objects', () => {
-    const list: LinkedList<MyObject> = new LinkedList<MyObject>();
+    const list: OptimizedLinkedList<MyObject> = new OptimizedLinkedList<MyObject>();
 
     expect(list.toString()).toEqual('');
 

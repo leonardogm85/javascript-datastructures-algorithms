@@ -1,4 +1,4 @@
-import { Compare, defaultCompare, CompareFunction } from '../util';
+import { Compare, CompareFunction, defaultCompare } from '../util';
 import { Queue } from './queue';
 
 export class PriorityQueue<T> extends Queue<T> {

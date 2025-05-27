@@ -1,7 +1,7 @@
-import { LinkedList } from './linked-list';
 import { ValuePair } from '../models/dictionary-model';
 import { Node } from '../models/linked-list-model';
-import { ToStringFunction, defaultToString, isNullOrUndefined } from '../util';
+import { defaultToString, isNullOrUndefined, ToStringFunction } from '../util';
+import { LinkedList } from './linked-list';
 
 export class HashTableSeparateChaining<K, V> {
 

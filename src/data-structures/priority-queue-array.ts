@@ -1,4 +1,4 @@
-import { Compare, defaultCompare, CompareFunction } from '../util';
+import { Compare, CompareFunction, defaultCompare } from '../util';
 import { QueueArray } from './queue-array';
 
 export class PriorityQueueArray<T> extends QueueArray<T> {
@@ -11,7 +11,7 @@ export class PriorityQueueArray<T> extends QueueArray<T> {
     let added: boolean = false;
 
     for (let i: number = 0; i < this.items.length; i++) {
-      if (!(this.compareFn(element, this.items[i]) === Compare.LESS_THAN)) {
+      if (!(this.compareFn(element, this.items.at(i)!) === Compare.LESS_THAN)) {
         continue;
       }
 

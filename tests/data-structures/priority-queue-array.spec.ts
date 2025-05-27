@@ -4,9 +4,7 @@ import { MyObject } from '../../src/models/my-object-model';
 describe('QueueArray', () => {
   it('starts empty', () => {
     const queue: PriorityQueueArray<number> = new PriorityQueueArray<number>();
-
     expect(queue.size()).toEqual(0);
-
     expect(queue.isEmpty()).toBeTruthy();
   });
 

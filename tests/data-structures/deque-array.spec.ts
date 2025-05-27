@@ -4,9 +4,7 @@ import { MyObject } from '../../src/models/my-object-model';
 describe('DequeArray', () => {
   it('starts empty', () => {
     const deque: DequeArray<number> = new DequeArray<number>();
-
     expect(deque.size()).toEqual(0);
-
     expect(deque.isEmpty()).toBeTruthy();
   });
 
@@ -81,7 +79,7 @@ describe('DequeArray', () => {
   it('allows to peek at the front element in the deque without removing it', () => {
     const deque: DequeArray<number> = new DequeArray<number>();
 
-    expect(deque.peekFront()).toBeUndefined()
+    expect(deque.peekFront()).toBeUndefined();
 
     deque.addFront(1);
     expect(deque.peekFront()).toEqual(1);
@@ -105,7 +103,7 @@ describe('DequeArray', () => {
   it('allows to peek at the last element in the deque without removing it', () => {
     const deque: DequeArray<number> = new DequeArray<number>();
 
-    expect(deque.peekBack()).toBeUndefined()
+    expect(deque.peekBack()).toBeUndefined();
 
     deque.addFront(1);
     expect(deque.peekBack()).toEqual(1);

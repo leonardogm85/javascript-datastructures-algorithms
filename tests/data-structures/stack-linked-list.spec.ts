@@ -1,12 +1,10 @@
-import { MyObject } from '../../src/models/my-object-model';
 import { StackLinkedList } from '../../src/data-structures/stack-linked-list';
+import { MyObject } from '../../src/models/my-object-model';
 
 describe('StackLinkedList', () => {
   it('starts empty', () => {
     const stack: StackLinkedList<number> = new StackLinkedList<number>();
-
     expect(stack.size()).toEqual(0);
-
     expect(stack.isEmpty()).toBeTruthy();
   });
 

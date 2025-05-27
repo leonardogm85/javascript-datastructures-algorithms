@@ -4,9 +4,7 @@ import { MyObject } from '../../src/models/my-object-model';
 describe('StackArray', () => {
   it('starts empty', () => {
     const stack: StackArray<number> = new StackArray<number>();
-
     expect(stack.size()).toEqual(0);
-
     expect(stack.isEmpty()).toBeTruthy();
   });
 

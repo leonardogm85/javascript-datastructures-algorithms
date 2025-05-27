@@ -4,9 +4,7 @@ import { MyObject } from '../../src/models/my-object-model';
 describe('QueueLinkedList', () => {
   it('starts empty', () => {
     const queue: PriorityQueueLinkedList<number> = new PriorityQueueLinkedList<number>();
-
     expect(queue.size()).toEqual(0);
-
     expect(queue.isEmpty()).toBeTruthy();
   });
 

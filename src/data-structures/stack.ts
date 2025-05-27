@@ -36,8 +36,8 @@ export class Stack<T> {
   }
 
   clear(): void {
-    this.items = {};
     this.count = 0;
+    this.items = {};
   }
 
   toString(): string {

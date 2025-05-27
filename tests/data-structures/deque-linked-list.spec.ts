@@ -4,9 +4,7 @@ import { MyObject } from '../../src/models/my-object-model';
 describe('DequeLinkedList', () => {
   it('starts empty', () => {
     const deque: DequeLinkedList<number> = new DequeLinkedList<number>();
-
     expect(deque.size()).toEqual(0);
-
     expect(deque.isEmpty()).toBeTruthy();
   });
 
@@ -81,7 +79,7 @@ describe('DequeLinkedList', () => {
   it('allows to peek at the front element in the deque without removing it', () => {
     const deque: DequeLinkedList<number> = new DequeLinkedList<number>();
 
-    expect(deque.peekFront()).toBeUndefined()
+    expect(deque.peekFront()).toBeUndefined();
 
     deque.addFront(1);
     expect(deque.peekFront()).toEqual(1);
@@ -105,7 +103,7 @@ describe('DequeLinkedList', () => {
   it('allows to peek at the last element in the deque without removing it', () => {
     const deque: DequeLinkedList<number> = new DequeLinkedList<number>();
 
-    expect(deque.peekBack()).toBeUndefined()
+    expect(deque.peekBack()).toBeUndefined();
 
     deque.addFront(1);
     expect(deque.peekBack()).toEqual(1);

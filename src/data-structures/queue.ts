@@ -37,9 +37,9 @@ export class Queue<T> {
   }
 
   clear(): void {
-    this.items = {};
     this.count = 0;
     this.lowestCount = 0;
+    this.items = {};
   }
 
   toString(): string {

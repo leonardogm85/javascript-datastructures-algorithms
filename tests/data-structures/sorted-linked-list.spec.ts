@@ -1,7 +1,7 @@
 import { SortedLinkedList } from '../../src/data-structures/sorted-linked-list';
-import { defaultEquals, defaultCompare } from '../../src/util';
 import { Node } from '../../src/models/linked-list-model';
 import { MyObject } from '../../src/models/my-object-model';
+import { defaultCompare, defaultEquals } from '../../src/util';
 
 describe('SortedLinkedList', () => {
   function pushesElements(list: SortedLinkedList<number>, min: number, max: number): void {

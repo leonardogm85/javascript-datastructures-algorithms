@@ -1,5 +1,5 @@
 import { ValuePair } from '../models/dictionary-model';
-import { ToStringFunction, defaultToString, isNullOrUndefined } from '../util';
+import { defaultToString, isNullOrUndefined, ToStringFunction } from '../util';
 
 export class HashTableLinearProbing<K, V> {
 

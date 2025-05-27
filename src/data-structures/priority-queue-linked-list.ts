@@ -1,4 +1,4 @@
-import { Compare, defaultCompare, CompareFunction } from '../util';
+import { Compare, CompareFunction, defaultCompare } from '../util';
 import { QueueLinkedList } from './queue-linked-list';
 
 export class PriorityQueueLinkedList<T> extends QueueLinkedList<T> {

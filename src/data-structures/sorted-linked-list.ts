@@ -1,5 +1,5 @@
-import { Compare, EqualsFunction, CompareFunction, defaultEquals, defaultCompare } from '../util';
 import { Node } from '../models/linked-list-model';
+import { Compare, CompareFunction, defaultCompare, defaultEquals, EqualsFunction } from '../util';
 import { LinkedList } from './linked-list';
 
 export class SortedLinkedList<T> extends LinkedList<T> {

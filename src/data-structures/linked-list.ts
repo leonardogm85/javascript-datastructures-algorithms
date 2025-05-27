@@ -1,5 +1,5 @@
-import { defaultEquals, EqualsFunction } from '../util';
 import { Node } from '../models/linked-list-model';
+import { defaultEquals, EqualsFunction } from '../util';
 
 export class LinkedList<T> {
 
@@ -118,8 +118,8 @@ export class LinkedList<T> {
   }
 
   clear(): void {
-    this.head = undefined;
     this.count = 0;
+    this.head = undefined;
   }
 
   toString(): string {
