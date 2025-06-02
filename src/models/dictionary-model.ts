@@ -22,3 +22,5 @@ export class ValuePairLazy<K, V> extends ValuePair<K, V> {
   }
 
 }
+
+export type Callback<K, V> = (key: K, value: V) => void | boolean;

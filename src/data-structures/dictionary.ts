@@ -1,4 +1,4 @@
-import { ValuePair } from '../models/dictionary-model';
+import { Callback, ValuePair } from '../models/dictionary-model';
 import { defaultToString, isNullOrUndefined, ToStringFunction } from '../util';
 
 export class Dictionary<K, V> {
@@ -55,7 +55,7 @@ export class Dictionary<K, V> {
     return Object.values(this.table);
   }
 
-  forEach(callbackFn: (key: K, value: V) => void | boolean): void {
+  forEach(callbackFn: Callback<K, V>): void {
     const valuePairs: ValuePair<K, V>[] = this.keyValues();
 
     for (let i: number = 0; i < valuePairs.length; i++) {

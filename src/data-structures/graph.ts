@@ -1,25 +1,26 @@
+import { Vertex } from '../models/graph-model';
 import { Dictionary } from './dictionary';
 import { Set } from './set';
 
 export class Graph {
 
-  private vertices: Set<string | number> = new Set<string | number>();
+  private vertices: Set<Vertex> = new Set<Vertex>();
 
-  private adjacencyList: Dictionary<string | number, Set<string | number>> = new Dictionary<string | number, Set<string | number>>();
+  private adjacencyList: Dictionary<Vertex, Set<Vertex>> = new Dictionary<Vertex, Set<Vertex>>();
 
   constructor(private isDirected: boolean = false) { }
 
-  addVertex(vertex: string | number): void {
+  addVertex(vertex: Vertex): void {
     if (this.vertices.has(vertex)) {
       return;
     }
 
     this.vertices.add(vertex);
 
-    this.adjacencyList.set(vertex, new Set<string | number>());
+    this.adjacencyList.set(vertex, new Set<Vertex>());
   }
 
-  addEdge(aVertex: string | number, bVertex: string | number): void {
+  addEdge(aVertex: Vertex, bVertex: Vertex): void {
     if (!this.adjacencyList.hasKey(aVertex)) {
       this.addVertex(aVertex);
     }
@@ -35,7 +36,7 @@ export class Graph {
     }
   }
 
-  removeVertex(vertex: string | number): void {
+  removeVertex(vertex: Vertex): void {
     if (!this.vertices.has(vertex)) {
       return;
     }
@@ -44,14 +45,14 @@ export class Graph {
 
     this.adjacencyList.remove(vertex);
 
-    const vertices: (string | number)[] = this.vertices.values();
+    const vertices: Vertex[] = this.vertices.values();
 
     for (let i: number = 0; i < vertices.length; i++) {
       this.adjacencyList.get(vertices.at(i)!)!.delete(vertex);
     }
   }
 
-  removeEdge(aVertex: string | number, bVertex: string | number): void {
+  removeEdge(aVertex: Vertex, bVertex: Vertex): void {
     if (!this.vertices.has(aVertex) || !this.vertices.has(bVertex)) {
       return
     }
@@ -63,11 +64,11 @@ export class Graph {
     }
   }
 
-  hasVertex(vertex: string | number): boolean {
+  hasVertex(vertex: Vertex): boolean {
     return this.vertices.has(vertex);
   }
 
-  hasEdge(aVertex: string | number, bVertex: string | number): boolean {
+  hasEdge(aVertex: Vertex, bVertex: Vertex): boolean {
     if (!this.hasVertex(aVertex)) {
       return false;
     }
@@ -75,7 +76,7 @@ export class Graph {
     return this.adjacencyList.get(aVertex)!.has(bVertex);
   }
 
-  getNeighbors(vertex: string | number): Set<string | number> | undefined {
+  getNeighbors(vertex: Vertex): Set<Vertex> | undefined {
     if (!this.hasVertex(vertex)) {
       return undefined;
     }
@@ -83,11 +84,11 @@ export class Graph {
     return this.adjacencyList.get(vertex);
   }
 
-  getVertices(): Set<string | number> {
+  getVertices(): Set<Vertex> {
     return this.vertices;
   }
 
-  getAdjacencyList(): Dictionary<string | number, Set<string | number>> {
+  getAdjacencyList(): Dictionary<Vertex, Set<Vertex>> {
     return this.adjacencyList;
   }
 
@@ -96,18 +97,18 @@ export class Graph {
   }
 
   clear(): void {
-    this.vertices = new Set<string | number>();
-    this.adjacencyList = new Dictionary<string | number, Set<string | number>>();
+    this.vertices = new Set<Vertex>();
+    this.adjacencyList = new Dictionary<Vertex, Set<Vertex>>();
   }
 
   toString(): string {
     let objString: string = '';
 
-    const vertices: (string | number)[] = this.vertices.values();
+    const vertices: Vertex[] = this.vertices.values();
 
-    let vertex: string | number | undefined;
+    let vertex: Vertex | undefined;
 
-    let neighbors: (string | number)[] | undefined;
+    let neighbors: Vertex[] | undefined;
 
     for (let i: number = 0; i < vertices.length; i++) {
       vertex = vertices.at(i);
