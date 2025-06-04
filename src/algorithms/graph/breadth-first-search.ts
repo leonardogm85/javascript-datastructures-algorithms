@@ -1,6 +1,6 @@
-import { Graph } from "../../data-structures/graph";
-import { Queue } from "../../data-structures/queue";
-import { Callback, Color, Colors, initializeColors, SorthestPath, Vertex } from "../../models/graph-model";
+import { Graph } from '../../data-structures/graph';
+import { Queue } from '../../data-structures/queue';
+import { Callback, Color, Colors, initializeColors, SorthestPath, Vertex } from '../../models/graph-model';
 
 export const breadthFirstSearchCallback = (graph: Graph, startVertex: Vertex, callbackFn: Callback): void => {
   const vertices: Vertex[] = graph.getVertices().values();

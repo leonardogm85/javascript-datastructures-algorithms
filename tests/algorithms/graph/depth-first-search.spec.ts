@@ -1,6 +1,6 @@
-import { depthFirstSearchCallback, depthFirstSearchTopologicalSort } from "../../../src/algorithms/graph/depth-first-search";
-import { Graph } from "../../../src/data-structures/graph";
-import { Callback, Discovery, Finished, Predecessors, TopologicalSort, Vertex } from "../../../src/models/graph-model";
+import { depthFirstSearchCallback, depthFirstSearchTopologicalSort } from '../../../src/algorithms/graph/depth-first-search';
+import { Graph } from '../../../src/data-structures/graph';
+import { Callback, Discovery, Finished, Predecessors, TopologicalSort, Vertex } from '../../../src/models/graph-model';
 
 describe('Depth First Search', () => {
   function assertCallback(vertices: Vertex[]): Callback {

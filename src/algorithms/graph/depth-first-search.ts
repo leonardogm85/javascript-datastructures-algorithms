@@ -1,5 +1,5 @@
-import { Graph } from "../../data-structures/graph";
-import { Callback, Color, Colors, initializeColors, Time, TopologicalSort, Vertex } from "../../models/graph-model";
+import { Graph } from '../../data-structures/graph';
+import { Callback, Color, Colors, initializeColors, Time, TopologicalSort, Vertex } from '../../models/graph-model';
 
 const depthFirstSearchCallbackVisit = (graph: Graph, u: Vertex, colors: Colors, callbackFn: Callback): void => {
   colors[u] = Color.GREY;
