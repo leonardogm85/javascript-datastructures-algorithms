@@ -128,7 +128,7 @@ describe('Algorithm of Floyd-Warshall', () => {
 
     //       B
     //    3↗  ↘5
-    //  A   ←8   D
+    //  A   8←   D
     //    4↘  ↗3
     //       C
 

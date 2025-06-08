@@ -1,15 +1,15 @@
 const minDistance = (distance: number[], visited: boolean[]): number => {
   let minDistance: number = Infinity;
-  let minVertex: number = -1;
+  let minIndex: number = -1;
 
   for (let v: number = 0; v < distance.length; v++) {
     if (!visited[v] && distance[v] <= minDistance) {
       minDistance = distance[v];
-      minVertex = v;
+      minIndex = v;
     }
   }
 
-  return minVertex;
+  return minIndex;
 };
 
 export const dijkstra = (graph: number[][], source: number): number[] => {
