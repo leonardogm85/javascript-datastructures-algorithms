@@ -6,15 +6,22 @@ const find = (u: number, parent: number[]): number => {
   return parent[u];
 };
 
-const union = (u: number, v: number, parent: number[]): boolean => {
-  const uParent: number = find(u, parent);
-  const vParent: number = find(v, parent);
+const union = (u: number, v: number, parent: number[], rank: number[]): boolean => {
+  const uRoot: number = find(u, parent);
+  const vRoot: number = find(v, parent);
 
-  if (uParent === vParent) {
+  if (uRoot === vRoot) {
     return false;
   }
 
-  parent[vParent] = uParent;
+  if (rank[uRoot] < rank[vRoot]) {
+    parent[uRoot] = vRoot;
+  } else if (rank[uRoot] > rank[vRoot]) {
+    parent[vRoot] = uRoot;
+  } else {
+    parent[vRoot] = uRoot;
+    rank[uRoot]++;
+  }
 
   return true;
 };
@@ -43,27 +50,29 @@ function initializeEdges(graph: number[][]): number[][] {
 
 export function kruskal(graph: number[][]): number[][] {
   const parent: number[] = [];
+  const rank: number[] = [];
 
   for (let i: number = 0; i < graph.length; i++) {
     parent[i] = i;
+    rank[i] = 0;
   }
 
-  const allEdges: number[][] = initializeEdges(graph);
+  const sortedEdges: number[][] = initializeEdges(graph);
 
-  const edges: number[][] = [];
+  const mstEdges: number[][] = [];
 
-  for (let i: number = 0; i < allEdges.length; i++) {
-    const u: number = allEdges[i][0];
-    const v: number = allEdges[i][1];
+  for (let i: number = 0; i < sortedEdges.length; i++) {
+    const u: number = sortedEdges[i][0];
+    const v: number = sortedEdges[i][1];
 
-    if (union(u, v, parent)) {
-      edges.push(allEdges[i]);
+    if (union(u, v, parent, rank)) {
+      mstEdges.push(sortedEdges[i]);
 
-      if (edges.length == graph.length - 1) {
+      if (mstEdges.length == graph.length - 1) {
         break;
       }
     }
   }
 
-  return edges;
+  return mstEdges;
 }
