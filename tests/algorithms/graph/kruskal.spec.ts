@@ -1,4 +1,4 @@
-import { kruskal } from "../../../src/algorithms/graph/kruskal";
+import { kruskal } from '../../../src/algorithms/graph/kruskal';
 
 describe('Kruskal', () => {
   it('Minimum Spanning Tree', () => {
