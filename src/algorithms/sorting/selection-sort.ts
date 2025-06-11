@@ -1,4 +1,4 @@
-import { Compare, CompareFunction, defaultCompare, swap } from "../../util";
+import { Compare, CompareFunction, defaultCompare, swap } from '../../util';
 
 export function selectionSort<T>(array: T[], compareFn: CompareFunction<T> = defaultCompare): T[] {
   for (let i: number = 0; i < array.length - 1; i++) {
