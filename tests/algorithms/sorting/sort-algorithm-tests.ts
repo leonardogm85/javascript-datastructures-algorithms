@@ -5,7 +5,7 @@ export function sortAlgorithmTests(sortAlgorithm: Function, algorithmName: strin
   describe(algorithmName, () => {
     const size: number = 100;
 
-    function createNonSortedArray() {
+    function createNonSortedArray(): number[] {
       const array: number[] = [];
 
       for (let i: number = size; i > 0; i--) {
@@ -15,7 +15,7 @@ export function sortAlgorithmTests(sortAlgorithm: Function, algorithmName: strin
       return array;
     }
 
-    function createSortedArray() {
+    function createSortedArray(): number[] {
       const array: number[] = [];
 
       for (let i: number = 1; i <= size; i++) {
