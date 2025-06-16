@@ -4,6 +4,12 @@ export type CompareFunction<T> = (a: T, b: T) => number;
 
 export type ToStringFunction<T> = (o: T) => string;
 
+export enum CustomFunction {
+  EQUALS = 0,
+  COMPARE = 1,
+  TO_STRING = 2
+}
+
 export enum Compare {
   LESS_THAN = -1,
   BIGGER_THAN = 1,
@@ -44,6 +50,14 @@ export function reverseCompare<T>(compareFn: CompareFunction<T>): CompareFunctio
 
 export function swap<T>(array: T[], a: number, b: number): void {
   [array[a], array[b]] = [array[b], array[a]];
+}
+
+export function lesserEquals<T>(a: T, b: T, compareFn: CompareFunction<T>): boolean {
+  return compareFn(a, b) !== Compare.BIGGER_THAN;
+}
+
+export function biggerEquals<T>(a: T, b: T, compareFn: CompareFunction<T>): boolean {
+  return compareFn(a, b) !== Compare.LESS_THAN;
 }
 
 export function isNullOrUndefined<T>(o: T): boolean {
