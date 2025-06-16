@@ -1,6 +1,6 @@
 import { kruskal } from '../../../src/algorithms/graph/kruskal';
 
-describe('Kruskal', () => {
+describe('Algorithm of Kruskal', () => {
   it('Minimum Spanning Tree', () => {
     const vertices: string[] = [
       'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
