@@ -1,4 +1,4 @@
-import { lcs } from "../../../src/algorithms/dynamic-programing/longest-common-subsequence";
+import { lcs } from '../../../src/algorithms/dynamic-programing/longest-common-subsequence';
 
 describe('Longest Common Subsequence Dynamic Programming', () => {
   it('works with DP approach', () => {

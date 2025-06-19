@@ -28,6 +28,6 @@ export function lcs(wordX: string, wordY: string): number {
       }
     }
   }
-  console.log(l);
+
   return l[m][n];
 }
