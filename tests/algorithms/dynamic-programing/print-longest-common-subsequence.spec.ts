@@ -7,12 +7,12 @@ describe('Longest Common Subsequence Dynamic Programming with print solution', (
 
     //        a  b  c  a  d  f
     //     0  0  0  0  0  0  0
-    //  a  0 *1  1  1 *1  1  1
-    //  c  0  1  1 *2  2  2  2
+    //  a  0 *1  1  1 *1  1  1 - a
+    //  c  0  1  1 *2  2  2  2 - c
     //  b  0  1 *2  2  2  2  2
-    //  a  0 *1  2  2 *3  3  3
+    //  a  0 *1  2  2 *3  3  3 - a
     //  e  0  1  2  2  3  3  3
-    //  d  0  1  2  2  3 *4  4
+    //  d  0  1  2  2  3 *4  4 - d
 
     // Result = acad
 
@@ -23,12 +23,12 @@ describe('Longest Common Subsequence Dynamic Programming with print solution', (
 
     //        a  e  d  f  h  r
     //     0  0  0  0  0  0  0
-    //  a  0 *1  1  1  1  1  1
+    //  a  0 *1  1  1  1  1  1 - a
     //  b  0  1  1  1  1  1  1
     //  c  0  1  1  1  1  1  1
-    //  d  0  1  1 *2  2  2  2
+    //  d  0  1  1 *2  2  2  2 - d
     //  g  0  1  1  2  2  2  2
-    //  h  0  1  1  2  2 *3  3
+    //  h  0  1  1  2  2 *3  3 - h
 
     // Result = adh
 
@@ -40,11 +40,11 @@ describe('Longest Common Subsequence Dynamic Programming with print solution', (
     //        b  d  c  a  b  a
     //     0  0  0  0  0  0  0
     //  a  0  0  0  0 *1  1 *1
-    //  b  0 *1  1  1  1 *2  2
-    //  c  0  1  1 *2  2  2  2
-    //  b  0 *1  1  2  2 *3  3
+    //  b  0 *1  1  1  1 *2  2 - b
+    //  c  0  1  1 *2  2  2  2 - c
+    //  b  0 *1  1  2  2 *3  3 - b
     //  d  0  1 *2  2  2  3  3
-    //  a  0  1  2  2 *3  3 *4
+    //  a  0  1  2  2 *3  3 *4 - a
     //  b  0 *1  2  2  3 *4  4
 
     // Result = bcba
@@ -56,12 +56,12 @@ describe('Longest Common Subsequence Dynamic Programming with print solution', (
 
     //        a  t  g  t  t  a  t
     //     0  0  0  0  0  0  0  0
-    //  a  0 *1  1  1  1  1 *1  1
-    //  t  0  1 *2  2 *2 *2  2 *2
+    //  a  0 *1  1  1  1  1 *1  1 - a
+    //  t  0  1 *2  2 *2 *2  2 *2 - t
     //  c  0  1  2  2  2  2  2  2
-    //  g  0  1  2 *3  3  3  3  3
-    //  t  0  1 *2  3 *4 *4  4 *4
-    //  a  0 *1  2  3  4  4 *5  5
+    //  g  0  1  2 *3  3  3  3  3 - g
+    //  t  0  1 *2  3 *4 *4  4 *4 - t
+    //  a  0 *1  2  3  4  4 *5  5 - a
     //  c  0  1  2  3  4  4  5  5
 
     // Result = atgta
