@@ -1,6 +1,6 @@
-import { minCoinChange } from '../../../src/algorithms/dynamic-programing/min-coin-change';
+import { minCoinChange } from '../../../src/algorithms/dynamic-programming/min-coin-change';
 
-describe('Dynamic Programming: Min Coin Change', () => {
+describe('Algorithms - Dynamic Programming: Min Coin Change', () => {
   it('works with amount 0', () => {
     expect(minCoinChange([1, 2, 3], 0)).toEqual([]);
   });

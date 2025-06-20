@@ -1,6 +1,6 @@
-import { printLcs } from '../../../src/algorithms/dynamic-programing/print-longest-common-subsequence';
+import { printLcs } from '../../../src/algorithms/dynamic-programming/print-longest-common-subsequence';
 
-describe('Longest Common Subsequence Dynamic Programming with print solution', () => {
+describe('Algorithms - Dynamic Programming: Longest Common Subsequence with print solution', () => {
   it('works with DP approach with print solution', () => {
     let wordX: string | undefined;
     let wordY: string | undefined;

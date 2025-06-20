@@ -1,6 +1,6 @@
-import { knapSack } from '../../../src/algorithms/dynamic-programing/knapsack';
+import { knapSack } from '../../../src/algorithms/dynamic-programming/knapsack';
 
-describe('KnapSack Dynamic Programming', () => {
+describe('Algorithms - Dynamic Programming: KnapSack', () => {
   it('works with DP approach', () => {
     let weights: number[] | undefined;
     let values: number[] | undefined;

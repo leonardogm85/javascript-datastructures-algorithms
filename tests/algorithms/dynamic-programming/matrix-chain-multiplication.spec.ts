@@ -1,6 +1,6 @@
-import { matrixChainMultiplication } from '../../../src/algorithms/dynamic-programing/matrix-chain-multiplication';
+import { matrixChainMultiplication } from '../../../src/algorithms/dynamic-programming/matrix-chain-multiplication';
 
-describe('Matrix Chain Multiplication', () => {
+describe('Algorithms - Dynamic Programming: Matrix Chain Multiplication', () => {
   it('works with DP approach', () => {
     let p: number[] | undefined;
 

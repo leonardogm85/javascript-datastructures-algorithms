@@ -1,6 +1,6 @@
-import { recursiveKnapSack } from '../../../src/algorithms/dynamic-programing/recursive-knapsack';
+import { recursiveKnapSack } from '../../../src/algorithms/dynamic-programming/recursive-knapsack';
 
-describe('KnapSack Dynamic Programming: Recursive', () => {
+describe('Algorithms - Dynamic Programming: Recursive KnapSack', () => {
   it('works with DP approach', () => {
     let weights: number[] | undefined;
     let values: number[] | undefined;
