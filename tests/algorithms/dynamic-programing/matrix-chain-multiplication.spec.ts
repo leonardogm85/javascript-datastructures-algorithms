@@ -19,5 +19,9 @@ describe('Matrix Chain Multiplication', () => {
     p = [2, 1, 3, 4];
 
     expect(matrixChainMultiplication(p)).toEqual(20);
+
+    p = [30,35,15,5];
+
+    expect(matrixChainMultiplication(p)).toEqual(7875);
   });
 });
