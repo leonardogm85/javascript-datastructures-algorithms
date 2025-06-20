@@ -1,6 +1,6 @@
 import { factorial, factorialIterative } from '../../src/others/factorial';
 
-describe('Factorial', () => {
+describe('Others: Factorial', () => {
   it('Iterative Factorial', () => {
     expect(factorialIterative(-1)).toBeUndefined();
     expect(factorialIterative(0)).toEqual(1);

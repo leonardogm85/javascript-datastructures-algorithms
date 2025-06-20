@@ -1,7 +1,7 @@
 import { TowerOfHanoiModel } from '../../src/models/tower-of-hanoi-model';
 import { towerOfHanoiRecursive, towerOfHanoiStack } from '../../src/others/tower-of-hanoi';
 
-describe('Tower of Hanoi', () => {
+describe('Others: Tower of Hanoi', () => {
   it('Hanoi with Recursive', () => {
     for (let i: number = 0; i < 10; i++) {
       const result: string[][] = towerOfHanoiRecursive(i, 'a', 'b', 'c');

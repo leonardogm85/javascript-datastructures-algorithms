@@ -1,6 +1,6 @@
 import { palindromeChecker } from '../../src/others/palindrome-checker';
 
-describe('Palindrome', () => {
+describe('Others: Palindrome', () => {
   it('Palindrome Checker', () => {
     expect(palindromeChecker('')).toBeFalsy();
     expect(palindromeChecker('a')).toBeTruthy();

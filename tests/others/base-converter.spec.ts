@@ -1,6 +1,6 @@
 import { baseConverter, decimalToBinary } from '../../src/others/base-converter';
 
-describe('Base Converter', () => {
+describe('Others: Base Converter', () => {
   it('decimalToBinary 1 -> 1', () => {
     expect(decimalToBinary(1)).toEqual('1');
   });

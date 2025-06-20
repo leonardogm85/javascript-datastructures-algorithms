@@ -1,6 +1,6 @@
 import { parenthesesChecker } from '../../src/others/balanced-symbols';
 
-describe('Balanced Symbols', () => {
+describe('Others: Balanced Symbols', () => {
   it('empty to be truthy', () => {
     expect(parenthesesChecker('')).toBeTruthy();
   });

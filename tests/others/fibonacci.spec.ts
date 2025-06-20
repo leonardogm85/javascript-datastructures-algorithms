@@ -1,6 +1,6 @@
 import { fibonacci, fibonacciIterative, fibonacciIterativeMemoization, fibonacciMemoization } from '../../src/others/fibonacci';
 
-describe('Fibonacci', () => {
+describe('Others: Fibonacci', () => {
   it('Fibonacci Iterative', () => {
     expect(fibonacciIterative(-1)).toEqual(0);
     expect(fibonacciIterative(0)).toEqual(0);
