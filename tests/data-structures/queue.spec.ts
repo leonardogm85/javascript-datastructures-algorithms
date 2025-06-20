@@ -1,7 +1,7 @@
 import { Queue } from '../../src/data-structures/queue';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('Queue', () => {
+describe('Data Structures: Queue', () => {
   it('starts empty', () => {
     const queue: Queue<number> = new Queue<number>();
     expect(queue.size()).toEqual(0);

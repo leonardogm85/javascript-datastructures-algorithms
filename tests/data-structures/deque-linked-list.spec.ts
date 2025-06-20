@@ -1,7 +1,7 @@
 import { DequeLinkedList } from '../../src/data-structures/deque-linked-list';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('DequeLinkedList', () => {
+describe('Data Structures: Deque Linked List', () => {
   it('starts empty', () => {
     const deque: DequeLinkedList<number> = new DequeLinkedList<number>();
     expect(deque.size()).toEqual(0);

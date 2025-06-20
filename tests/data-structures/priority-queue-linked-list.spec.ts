@@ -1,7 +1,7 @@
 import { PriorityQueueLinkedList } from '../../src/data-structures/priority-queue-linked-list';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('QueueLinkedList', () => {
+describe('Data Structures: Priority Queue Linked List', () => {
   it('starts empty', () => {
     const queue: PriorityQueueLinkedList<number> = new PriorityQueueLinkedList<number>();
     expect(queue.size()).toEqual(0);

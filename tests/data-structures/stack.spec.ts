@@ -1,7 +1,7 @@
 import { Stack } from '../../src/data-structures/stack';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('Stack', () => {
+describe('Data Structures: Stack', () => {
   it('starts empty', () => {
     const stack: Stack<number> = new Stack<number>();
     expect(stack.size()).toEqual(0);

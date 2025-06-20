@@ -4,7 +4,7 @@ import { ValuePair } from '../../src/models/dictionary-model';
 import { Node } from '../../src/models/linked-list-model';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('HashTableSeparateChaining', () => {
+describe('Data Structures: Hash Table Separate Chaining', () => {
   const A: string = 'Jonathan';
   const B: string = 'Jamie';
   const C: string = 'Sue';

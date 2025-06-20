@@ -2,7 +2,7 @@ import { HashTableLinearProbingLazy } from '../../src/data-structures/hash-table
 import { ValuePairLazy } from '../../src/models/dictionary-model';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('HashTableLinearProbingLazy', () => {
+describe('Data Structures: Hash Table Linear Probing Lazy', () => {
   const A: string = 'Jonathan';
   const B: string = 'Jamie';
   const C: string = 'Sue';

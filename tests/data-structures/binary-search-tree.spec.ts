@@ -3,7 +3,7 @@ import { Node } from '../../src/models/tree-model';
 
 // TODO: Complete tests
 
-describe('BinarySearchTree', () => {
+describe('Data Structures: Binary Search Tree', () => {
   function insertsElements(tree: BinarySearchTree<number>): void {
     //  n0 ->              11
     //                 /        \

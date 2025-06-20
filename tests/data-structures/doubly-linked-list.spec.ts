@@ -3,7 +3,7 @@ import { DoublyNode } from '../../src/models/linked-list-model';
 import { MyObject } from '../../src/models/my-object-model';
 import { defaultEquals } from '../../src/util';
 
-describe('DoublyLinkedList', () => {
+describe('Data Structures: Doubly Linked List', () => {
   function pushesElements(list: DoublyLinkedList<number>, min: number, max: number): void {
     for (let i: number = min; i <= max; i++) {
       list.push(i);

@@ -2,7 +2,7 @@ import { HashTable } from '../../src/data-structures/hash-table';
 import { ValuePair } from '../../src/models/dictionary-model';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('HashTable', () => {
+describe('Data Structures: Hash Table', () => {
   it('starts empty', () => {
     const hashTable: HashTable<number, number> = new HashTable<number, number>();
     expect(hashTable.size()).toEqual(0);

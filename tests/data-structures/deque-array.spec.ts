@@ -1,7 +1,7 @@
 import { DequeArray } from '../../src/data-structures/deque-array';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('DequeArray', () => {
+describe('Data Structures: Deque Array', () => {
   it('starts empty', () => {
     const deque: DequeArray<number> = new DequeArray<number>();
     expect(deque.size()).toEqual(0);

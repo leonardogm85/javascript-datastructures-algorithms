@@ -3,7 +3,7 @@ import { Node } from '../../src/models/linked-list-model';
 import { MyObject } from '../../src/models/my-object-model';
 import { defaultCompare, defaultEquals } from '../../src/util';
 
-describe('SortedLinkedList', () => {
+describe('Data Structures: Sorted Linked List', () => {
   function pushesElements(list: SortedLinkedList<number>, min: number, max: number): void {
     for (let i: number = max; i >= min; i--) {
       list.push(i);

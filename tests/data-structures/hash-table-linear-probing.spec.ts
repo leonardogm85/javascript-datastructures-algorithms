@@ -2,7 +2,7 @@ import { HashTableLinearProbing } from '../../src/data-structures/hash-table-lin
 import { ValuePair } from '../../src/models/dictionary-model';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('HashTableLinearProbing', () => {
+describe('Data Structures: Hash Table Linear Probing', () => {
   const A: string = 'Jonathan';
   const B: string = 'Jamie';
   const C: string = 'Sue';

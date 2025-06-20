@@ -3,7 +3,7 @@ import { Color, RedBlackNode } from '../../src/models/tree-model';
 
 // TODO: Complete tests
 
-describe('RedBlackTree', () => {
+describe('Data Structures: Red Black Tree', () => {
   function verifyNode(node: RedBlackNode<number> | undefined, key: number, color: Color) {
     expect(node?.color).toEqual(color);
     expect(node?.key).toEqual(key);

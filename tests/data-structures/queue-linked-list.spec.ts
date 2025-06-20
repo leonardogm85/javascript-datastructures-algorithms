@@ -1,7 +1,7 @@
 import { QueueLinkedList } from '../../src/data-structures/queue-linked-list';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('QueueLinkedList', () => {
+describe('Data Structures: Queue Linked List', () => {
   it('starts empty', () => {
     const queue: QueueLinkedList<number> = new QueueLinkedList<number>();
     expect(queue.size()).toEqual(0);

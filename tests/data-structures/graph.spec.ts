@@ -1,6 +1,6 @@
 import { Graph } from '../../src/data-structures/graph';
 
-describe('Queue', () => {
+describe('Data Structures: Graph', () => {
   it('starts empty', () => {
     const graph: Graph = new Graph();
     expect(graph.isEmpty()).toBeTruthy();

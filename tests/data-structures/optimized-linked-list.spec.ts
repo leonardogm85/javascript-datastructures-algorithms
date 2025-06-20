@@ -3,7 +3,7 @@ import { Node } from '../../src/models/linked-list-model';
 import { MyObject } from '../../src/models/my-object-model';
 import { defaultEquals } from '../../src/util';
 
-describe('LinkedListOtimized', () => {
+describe('Data Structures: Otimized Linked List', () => {
   function pushesElements(list: OptimizedLinkedList<number>, min: number, max: number): void {
     for (let i: number = min; i <= max; i++) {
       list.push(i);

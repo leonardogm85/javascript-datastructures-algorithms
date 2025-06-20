@@ -2,7 +2,7 @@ import { AVLTree } from '../../src/data-structures/avl-tree';
 
 // TODO: Complete tests
 
-describe('AVLTree', () => {
+describe('Data Structures: AVL Tree', () => {
   it('starts empty', () => {
     const tree: AVLTree<number> = new AVLTree<number>();
     expect(tree.getRoot()).toBeUndefined();

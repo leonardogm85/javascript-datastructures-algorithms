@@ -1,7 +1,7 @@
 import { HashSet } from '../../src/data-structures/hash-set';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('HashSet', () => {
+describe('Data Structures: Hash Set', () => {
   function addValues(min: number, max: number): HashSet<number> {
     const hashSet: HashSet<number> = new HashSet<number>();
 

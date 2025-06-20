@@ -2,7 +2,7 @@ import { Dictionary } from '../../src/data-structures/dictionary';
 import { ValuePair } from '../../src/models/dictionary-model';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('Dictionary', () => {
+describe('Data Structures: Dictionary', () => {
   function customToString(key: MyObject) {
     return `####${key}`;
   }

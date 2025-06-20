@@ -1,7 +1,7 @@
 import { PriorityQueueArray } from '../../src/data-structures/priority-queue-array';
 import { MyObject } from '../../src/models/my-object-model';
 
-describe('QueueArray', () => {
+describe('Data Structures: Priority Queue Array', () => {
   it('starts empty', () => {
     const queue: PriorityQueueArray<number> = new PriorityQueueArray<number>();
     expect(queue.size()).toEqual(0);

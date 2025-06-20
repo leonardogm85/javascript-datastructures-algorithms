@@ -3,7 +3,7 @@ import { MaxHeap, MinHeap } from '../../src/data-structures/heap';
 import { MyObject } from '../../src/models/my-object-model';
 import { CompareFunction, defaultCompare, reverseCompare } from '../../src/util';
 
-describe('Heap', () => {
+describe('Data Structures: Heap', () => {
   it('starts empty MinHeap', () => {
     const heap: MinHeap<number> = new MinHeap<number>();
     expect(heap.findMinimum()).toBeUndefined();
