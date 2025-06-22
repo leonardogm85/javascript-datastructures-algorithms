@@ -1,6 +1,6 @@
-import { knapSack } from '../../../src/algorithms/dynamic-programming/knapsack';
+import { printKnapSack } from '../../../src/algorithms/dynamic-programming/print-knapsack';
 
-describe('Algorithms - Dynamic Programming: KnapSack', () => {
+describe('Algorithms - Dynamic Programming: Print KnapSack', () => {
   it('works with DP approach', () => {
     let weights: number[] | undefined;
     let values: number[] | undefined;
@@ -23,7 +23,7 @@ describe('Algorithms - Dynamic Programming: KnapSack', () => {
     n = values.length;
     capacity = 5;
 
-    expect(knapSack(n, capacity, weights, values)).toEqual(7);
+    expect(printKnapSack(n, capacity, weights, values)).toEqual([1, 0]);
 
     //  Capacity = 11
     //  Items = 4
@@ -42,7 +42,7 @@ describe('Algorithms - Dynamic Programming: KnapSack', () => {
     n = values.length;
     capacity = 11;
 
-    expect(knapSack(n, capacity, weights, values)).toEqual(15);
+    expect(printKnapSack(n, capacity, weights, values)).toEqual([3, 1]);
 
     //  Capacity = 5
     //  Items = 4
@@ -54,13 +54,13 @@ describe('Algorithms - Dynamic Programming: KnapSack', () => {
     //  3  0  0  3  8  9 11
     //  4  0  6  6  9 14 15
 
-    //  Result = 15 Index 3 and 2
+    //  Result = 15 -> Index 3 and 2
 
     weights = [3, 2, 4, 1];
     values = [8, 3, 9, 6];
     n = values.length;
     capacity = 5;
 
-    expect(knapSack(n, capacity, weights, values)).toEqual(15);
+    expect(printKnapSack(n, capacity, weights, values)).toEqual([3, 2]);
   });
 });
