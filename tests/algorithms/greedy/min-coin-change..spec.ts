@@ -1,12 +1,12 @@
-import { minCoinChange } from '../../../src/algorithms/dynamic-programming/min-coin-change';
+import { minCoinChange } from '../../../src/algorithms/greedy/min-coin-change';
 
-describe('Algorithms - Dynamic Programming: Min Coin Change', () => {
-  it('works with PD approach: 15', () => {
-    expect(minCoinChange([1, 5, 10], 15)).toEqual([5, 10]);
+describe('Algorithms - Greedy: Min Coin Change', () => {
+  it('works with greedy approach: 15', () => {
+    expect(minCoinChange([1, 5, 10], 15)).toEqual([10, 5]);
   });
 
-  it('works with PD approach: 6', () => {
-    expect(minCoinChange([1, 3, 4], 6)).toEqual([3, 3]);
+  it('works with greedy approach: 6', () => {
+    expect(minCoinChange([1, 3, 4], 6)).toEqual([4, 1, 1]);
   });
 
   it('works with amount 0', () => {
@@ -26,11 +26,11 @@ describe('Algorithms - Dynamic Programming: Min Coin Change', () => {
   });
 
   it('works with amount 4', () => {
-    expect(minCoinChange([1, 2, 3], 4)).toEqual([1, 3]);
+    expect(minCoinChange([1, 2, 3], 4)).toEqual([3, 1]);
   });
 
   it('works with amount 5', () => {
-    expect(minCoinChange([1, 2, 3], 5)).toEqual([2, 3]);
+    expect(minCoinChange([1, 2, 3], 5)).toEqual([3, 2]);
   });
 
   it('works with amount 6', () => {
@@ -38,11 +38,11 @@ describe('Algorithms - Dynamic Programming: Min Coin Change', () => {
   });
 
   it('works with amount 7', () => {
-    expect(minCoinChange([1, 2, 3], 7)).toEqual([1, 3, 3]);
+    expect(minCoinChange([1, 2, 3], 7)).toEqual([3, 3, 1]);
   });
 
   it('works with amount 8', () => {
-    expect(minCoinChange([1, 2, 3], 8)).toEqual([2, 3, 3]);
+    expect(minCoinChange([1, 2, 3], 8)).toEqual([3, 3, 2]);
   });
 
   it('works with amount 8', () => {
