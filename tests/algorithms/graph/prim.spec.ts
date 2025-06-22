@@ -1,6 +1,6 @@
 import { prim } from '../../../src/algorithms/graph/prim';
 
-describe('Algorithm of Prim', () => {
+describe('Algorithms - Graph: Prim', () => {
   it('Minimum Spanning Tree', () => {
     const vertices: string[] = [
       'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',

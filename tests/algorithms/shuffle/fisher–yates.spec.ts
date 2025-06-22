@@ -1,6 +1,6 @@
 import { shuffle } from '../../../src/algorithms/shuffle/fisher–yates';
 
-describe('Fisher-Yates Suffle', () => {
+describe('Algorithms - Suffle: Fisher-Yates Suffle', () => {
   const size: number = 100;
 
   function createSortedArray(): number[] {

@@ -2,7 +2,7 @@ import { depthFirstSearchCallback, depthFirstSearchTopologicalSort } from '../..
 import { Graph } from '../../../src/data-structures/graph';
 import { Callback, Discovery, Finished, Predecessors, TopologicalSort, Vertex } from '../../../src/models/graph-model';
 
-describe('Depth First Search', () => {
+describe('Algorithms - Graph: Depth First Search', () => {
   function assertCallback(vertices: Vertex[]): Callback {
     let count: number = 0;
 

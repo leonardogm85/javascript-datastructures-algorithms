@@ -2,4 +2,4 @@ import { sequentialSearch } from '../../../src/algorithms/search/sequential-sear
 import { CustomFunction } from '../../../src/util';
 import { searchAlgorithmTests } from './search-algorithm-tests';
 
-searchAlgorithmTests(sequentialSearch, 'Sequential Search', { customFunction: CustomFunction.EQUALS });
+searchAlgorithmTests(sequentialSearch, 'Algorithms - Search: Sequential Search', { customFunction: CustomFunction.EQUALS });

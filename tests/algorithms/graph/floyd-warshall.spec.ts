@@ -1,6 +1,6 @@
 import { floydWarshall } from '../../../src/algorithms/graph/floyd-warshall';
 
-describe('Algorithm of Floyd-Warshall', () => {
+describe('Algorithms - Graph: Floyd-Warshall', () => {
   it('All-Pairs Shortest Path', () => {
     const i: number = Infinity;
 

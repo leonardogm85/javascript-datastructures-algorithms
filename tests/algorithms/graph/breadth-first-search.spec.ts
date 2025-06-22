@@ -4,7 +4,7 @@ import { Graph } from '../../../src/data-structures/graph';
 import { Stack } from '../../../src/data-structures/stack';
 import { Callback, Distances, Predecessors, SorthestPath, Vertex } from '../../../src/models/graph-model';
 
-describe('Breadth First Search', () => {
+describe('Algorithms - Graph: Breadth First Search', () => {
   function assertCallback(vertices: Vertex[]): Callback {
     let count: number = 0;
 

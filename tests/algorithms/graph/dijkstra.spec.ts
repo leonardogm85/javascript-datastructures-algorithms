@@ -1,6 +1,6 @@
 import { dijkstra } from '../../../src/algorithms/graph/dijkstra';
 
-describe('Algorithm of Dijkstra', () => {
+describe('Algorithms - Graph: Dijkstra', () => {
   it('Shortest Path', () => {
     let graph: number[][] | undefined;
 

@@ -2,4 +2,4 @@ import { recursiveBinarySearch } from '../../../src/algorithms/search/recursive-
 import { CustomFunction } from '../../../src/util';
 import { searchAlgorithmTests } from './search-algorithm-tests';
 
-searchAlgorithmTests(recursiveBinarySearch, 'Recursive Binary Search', { customFunction: CustomFunction.COMPARE });
+searchAlgorithmTests(recursiveBinarySearch, 'Algorithms - Search: Recursive Binary Search', { customFunction: CustomFunction.COMPARE });

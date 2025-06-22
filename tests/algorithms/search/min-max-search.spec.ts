@@ -1,6 +1,6 @@
 import { findMaxValue, findMinValue } from '../../../src/algorithms/search/min-max-search';
 
-describe('Min and Max Values Search', () => {
+describe('Algorithms - Search: Min and Max Values Search', () => {
   const size: number = 10;
 
   function createSortedArray() {
