@@ -1,4 +1,4 @@
-import { knapSack } from "../../../src/algorithms/greedy/knapsack";
+import { knapSack } from '../../../src/algorithms/greedy/knapsack';
 
 describe('Algorithms - Greedy: KnapSack', () => {
   it('works with greedy approach', () => {

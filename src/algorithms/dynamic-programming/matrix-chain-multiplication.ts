@@ -1,4 +1,4 @@
-export function matrixChainMultiplication(p: number[]): number {
+export function matrixChainOrder(p: number[]): number {
   const n: number = p.length;
 
   const m: number[][] = [];
