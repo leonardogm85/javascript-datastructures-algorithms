@@ -1,12 +1,12 @@
-const find = (u: number, parent: number[]): number => {
+function find(u: number, parent: number[]): number {
   if (parent[u] !== u) {
     parent[u] = find(parent[u], parent);
   }
 
   return parent[u];
-};
+}
 
-const union = (u: number, v: number, parent: number[], rank: number[]): boolean => {
+function union(u: number, v: number, parent: number[], rank: number[]): boolean {
   const uRoot: number = find(u, parent);
   const vRoot: number = find(v, parent);
 
@@ -24,8 +24,7 @@ const union = (u: number, v: number, parent: number[], rank: number[]): boolean 
   }
 
   return true;
-};
-
+}
 
 function initializeEdges(graph: number[][]): number[][] {
   const edges: number[][] = [];
@@ -68,7 +67,7 @@ export function kruskal(graph: number[][]): number[][] {
     if (union(u, v, parent, rank)) {
       mstEdges.push(sortedEdges[i]);
 
-      if (mstEdges.length == graph.length - 1) {
+      if (mstEdges.length === graph.length - 1) {
         break;
       }
     }
