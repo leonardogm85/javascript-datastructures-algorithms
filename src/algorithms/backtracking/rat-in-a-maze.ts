@@ -1,14 +1,14 @@
-function isSafe(maze: number[][], x: number, y: number, visited: boolean[][]): boolean {
+function isSafe(maze: number[][], x: number, y: number, solution: number[][]): boolean {
   const n: number = maze.length;
 
-  if (x >= 0 && y >= 0 && x < n && y < n && maze[x][y] === 1 && !visited[x][y]) {
+  if (x >= 0 && y >= 0 && x < n && y < n && maze[x][y] === 1 && solution[x][y] === 0) {
     return true;
   }
 
   return false;
 }
 
-function findPath(maze: number[][], x: number, y: number, solution: number[][], visited: boolean[][]): boolean {
+function findPath(maze: number[][], x: number, y: number, solution: number[][]): boolean {
   const n: number = maze.length;
 
   if (x === n - 1 && y === n - 1) {
@@ -16,27 +16,25 @@ function findPath(maze: number[][], x: number, y: number, solution: number[][], 
     return true;
   }
 
-  if (isSafe(maze, x, y, visited) === true) {
-    visited[x][y] = true;
+  if (isSafe(maze, x, y, solution)) {
     solution[x][y] = 1;
 
-    if (findPath(maze, x + 1, y, solution, visited)) {
+    if (findPath(maze, x + 1, y, solution)) {
       return true;
     }
 
-    if (findPath(maze, x, y + 1, solution, visited)) {
+    if (findPath(maze, x, y + 1, solution)) {
       return true;
     }
 
-    if (findPath(maze, x - 1, y, solution, visited)) {
+    if (findPath(maze, x - 1, y, solution)) {
       return true;
     }
 
-    if (findPath(maze, x, y - 1, solution, visited)) {
+    if (findPath(maze, x, y - 1, solution)) {
       return true;
     }
 
-    visited[x][y] = false;
     solution[x][y] = 0;
   }
 
@@ -45,21 +43,18 @@ function findPath(maze: number[][], x: number, y: number, solution: number[][], 
 
 export function ratInAMaze(maze: number[][]): number[][] | string {
   const solution: number[][] = [];
-  const visited: boolean[][] = [];
 
   for (let i: number = 0; i < maze.length; i++) {
     solution[i] = [];
-    visited[i] = [];
 
     for (let j: number = 0; j < maze[i].length; j++) {
       solution[i][j] = 0;
-      visited[i][j] = false;
     }
   }
 
-  if (findPath(maze, 0, 0, solution, visited) === true) {
+  if (findPath(maze, 0, 0, solution)) {
     return solution;
-  } else {
-    return 'NO PATH FOUND';
   }
+
+  return 'NO PATH FOUND';
 }
